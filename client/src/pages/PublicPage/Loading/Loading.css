@@ -1,0 +1,27 @@
+.loading {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loadingPost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loadingLogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.loader {
+    margin: auto;
+    border: 10px solid #EAF0F6;
+    border-radius: 50px;
+    border-top: 10px solid gray;
+    width: 100px;
+    height: 100px;
+    animation: spinner 5s linear infinite;
+}

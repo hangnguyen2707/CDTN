@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+#header {
+    position: relative;
+    background: url(../../assets/images/bg_1-1.jpg) no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#header::before {
+    position:absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1;
+    background-color: transparent;
+}
+
+nav .menuNav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 30px;
+}
+
+
+.menuNav li {
+    list-style: none;
+}
+
+#search-input {
+    border-radius: 15px;
+    border: 1px solid rgb(215, 215,215);
+    height: 27px;
+    width: 250px;
+    background-color: rgb(215, 215,215);
+    padding-left: 5px;
+}
+
+#search-input:focus {
+    outline: 0;
+}
+
+#search-input::placeholder {
+    padding-left: 5px;
+}
+
+.search {
+    position: relative;
+}
+
+#header a {
+    color: white;
+    text-decoration: none;
+}
+
+.post {
+    margin-left: 10%;
+    margin-top: 270px;
+}
+
+.post h1 {
+    display: flex;
+    justify-content: center;
+    font-family: "Courier Prime", monospace; 
+    font-weight: 600;
+    color: white;
+    border-right: 4px solid #000;
+    animation: cursor 1s infinite step-end, typing 10s steps(20);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchBox {
+    background-color: rgb(215, 215,215);
+    padding-left: 5px;
+    position: absolute;
+    top: 70%;
+    width: 250px;
+    border-bottom: 1px solid black;
+}
+
+.searchBox:hover {
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+
+@keyframes typing{
+    0%{ width: 0ch} 
+    30%{ width: 25ch;} 
+    80%{ width: 25ch;} 
+    90%{ width: 0ch;} 
+    100%{ width: 0ch;}
+}
+/* 
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+} */
+
+.header-span {
+    margin-left: 200px;
+}
+
+@media screen and (min-width:360px) {
+    .post h1 {
+        font-size: 25px;
+    }
+    #search-input {
+        width: 100px
+    }
+    nav .menuNav {
+        gap: 5px
+    }
+    .searchBox {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .post h1 {
+        font-size: 13px;
+    }
+    #search-input {
+        display: none;
+    }
+    nav .menuNav {
+        gap: 0px
+    }
+    .menuNav li {
+        font-size: 10px;
+    }
+    .menuNav li h2{
+        font-size: 15px;
+    }
+}
+@media screen and (min-width:768px) {
+    .post h1 {
+        font-size: 50px;
+    }
+    #search-input {
+        width: 200px
+    }
+    nav .menuNav {
+        gap: 20px
+    }
+    .searchBox {
+        width: 200px;
+    }
+}
+@media screen and (min-width:1366px) {
+    .post h1 {
+        font-size:70px;
+    }
+    #search-input {
+        width: 250px
+    }
+    .searchBox {
+        width: 250px;
+    }
+}

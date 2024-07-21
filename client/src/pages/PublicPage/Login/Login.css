@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#container-signIn {
+    border-radius: 20px 0px 0px 20px;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+    height: 600px;
+    opacity: 0.85;
+    box-shadow: 0.4rem 0.4rem 0.45rem rgba(0,0,30,0.3);
+}
+
+.flexRow {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#imgSignIn {
+    width: 8vw;
+    height:70px;
+    margin-top: 10%;
+    margin-bottom:15%;
+}
+
+#flex1 {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#flex1 h1 {
+    font-family: "Courier Prime", monospace; 
+    font-weight: bolder;
+    text-align: center;
+    color: black;
+    margin-bottom:10%;
+    font-size: 45px;
+}
+
+#container-signIn input {
+    width: 350px;
+    height: 50px;
+    border-radius: 15px;
+    margin-bottom: 5%;
+}
+
+
+#container-signIn input::placeholder {
+    padding-left: 5px;
+}
+
+#container-signIn input::-ms-value {
+    padding-left: 5px;
+}
+
+
+#poster {
+    position: relative;
+    border-radius: 0px 20px 20px 0px;
+    background-image: url(https://media.istockphoto.com/id/1299083810/vi/anh/b%C6%B0u-ki%E1%BB%87n-tr%C3%AAn-b%C4%83ng-t%E1%BA%A3i-trong-nh%C3%A0-kho.jpg?s=612x612&w=0&k=20&c=BAQefYe9vrqWQyNwAvsKHlyf99qqQdvPiStprLXED8s=);
+    width: 50%;
+    height: 600px;
+    opacity: 0.8;
+    box-shadow: 0.4rem 0.4rem 0.45rem rgba(0,0,30,0.3);
+    opacity: 0.8;
+}
+
+#poster::before {
+    border-radius: 0px 20px 20px 0px;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+
+#flex2 {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#flex2 h1 {
+    font-weight: bolder;
+    font-family:sans-serif;
+    text-align: center;
+    color: white;
+    margin-top: 25%;
+    font-size:50px;
+}
+
+#flex2 p {
+    color: white;
+    font-style: italic;
+    text-align: center;
+    font-size:30px;
+}
+
+#phone, #password {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btnSignIn {
+    width: 350px;
+    height: 50px;
+    background-color: #006699;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.label-login {
+    font-size:20px;
+}
+
+
+@media screen and (max-width:360px) {
+    #imgSignIn {
+        display: none;
+    }
+    #poster {
+        display: none;
+    }
+    #container-signIn {
+        width: 100%;
+    }
+    #container-signIn input {
+        width: 100%;
+    }
+    .btnSignIn {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width:360px) {
+    #imgSignIn {
+        display: none;
+    }
+    #poster {
+        display: none;
+    }
+    #container-signIn {
+        width: 100%;
+    }
+}
+@media screen and (min-width:768px) {
+    #imgSignIn {
+        display: block;
+    }
+    #imgSignIn {
+        width: 8vw;
+        height:70px;
+        margin-top: 10%;
+        margin-bottom:15%;
+    }
+    #container-signIn {
+        width: 50%;
+    }
+    #poster {
+        display: block;
+    }
+    #poster {
+        position: relative;
+        border-radius: 0px 20px 20px 0px;
+        background-image: url(https://media.istockphoto.com/id/1299083810/vi/anh/b%C6%B0u-ki%E1%BB%87n-tr%C3%AAn-b%C4%83ng-t%E1%BA%A3i-trong-nh%C3%A0-kho.jpg?s=612x612&w=0&k=20&c=BAQefYe9vrqWQyNwAvsKHlyf99qqQdvPiStprLXED8s=);
+        width: 50%;
+        height: 600px;
+        opacity: 0.8;
+        box-shadow: 0.4rem 0.4rem 0.45rem rgba(0,0,30,0.3);
+        opacity: 0.8;
+    }
+}
+@media screen and (min-width:1366px) {
+    #imgSignIn {
+        display: block;
+    }
+    #container-signIn {
+        width: 50%;
+    }
+    #poster {
+        display: block;
+    }
+    #poster {
+        position: relative;
+        border-radius: 0px 20px 20px 0px;
+        background-image: url(https://media.istockphoto.com/id/1299083810/vi/anh/b%C6%B0u-ki%E1%BB%87n-tr%C3%AAn-b%C4%83ng-t%E1%BA%A3i-trong-nh%C3%A0-kho.jpg?s=612x612&w=0&k=20&c=BAQefYe9vrqWQyNwAvsKHlyf99qqQdvPiStprLXED8s=);
+        width: 50%;
+        height: 600px;
+        opacity: 0.8;
+        box-shadow: 0.4rem 0.4rem 0.45rem rgba(0,0,30,0.3);
+        opacity: 0.8;
+    }
+}

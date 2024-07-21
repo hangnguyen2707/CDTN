@@ -1,0 +1,15 @@
+button {
+    border-radius: 10px;
+    border: none;
+}
+
+button:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+/* div {
+    margin:5px 0;
+    font-weight: 600;
+    font-size: 15px;
+} */
