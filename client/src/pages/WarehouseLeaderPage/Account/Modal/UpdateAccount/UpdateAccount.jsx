@@ -136,6 +136,22 @@ function UpdateAccountModal(props) {
             </Form.Group>
           </Row>
           <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="userId">
+              <Form.Label>Mã nhân viên</Form.Label>
+              <Form.Control
+                type="text"
+                value={''}
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="password">
+              <Form.Label>Mật khẩu</Form.Label>
+              <Form.Control
+                type="text"
+                value={'Minhdat1234'}
+              />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
             <Form.Group as={Col} controlId="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
