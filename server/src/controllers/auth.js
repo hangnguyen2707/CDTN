@@ -17,14 +17,14 @@ exports.login = async (req, res) => {
 }
 
 exports.createAccount = async (req, res) => {
-    const {name, phone, email, password, address, accountType} = req.body
+    const {name, phone, email, password, accountType} = req.body
     console.log(req.body)
     try{
         // return name
-        if(!name || !phone || !email || !password || !address || !accountType) return res.status(400).json({
+        if(!name || !phone || !email || !password || !accountType) return res.status(400).json({
             err: 1,
             msg: 'Missing inputs!' + (!name ? "name " : " ") + (!phone ? "phone " : " ")
-                                + (!password ? "password " : " ") + (!address ? "address " : " ")
+                                + (!password ? "password " : " ")
                                 + (!accountType ? "accountType " : " ") + (!email ? "email " : " ")
         })
         const response = await authService.registerService(req.body)

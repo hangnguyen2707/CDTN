@@ -36,13 +36,15 @@ exports.createService = (body) => new Promise(async(resolve, reject) => {
         })
         const responsePackage = await db.Package.create({
             packageCode: taoMaDonHang(),
+            note: body.note,
+            type: body.type,
             senderId: sender.id,
             receiverId: receiver.id,
             transactionPointStartId: body.transactionPointStartId,
             warehouseStartId: body.warehouseStartId,
             name: body.name,
             shippingCost: body.shippingCost
-        
+
         })
         const responseStatus = await db.Status.create({
             packageId: responsePackage.id,
@@ -61,7 +63,7 @@ exports.createService = (body) => new Promise(async(resolve, reject) => {
 exports.getAllService = () => new Promise(async(resolve, reject) => {
     try {
         const response = await db.Package.findAll({
-            attributes: ['id','packageCode','name', 'shippingCost'],
+            attributes: ['id','packageCode','name', 'type', 'note', 'shippingCost'],
             include: [
                 {
                 model: db.Customer,
@@ -136,7 +138,7 @@ exports.deleteService = (id) => new Promise(async(resolve, reject) => {
       const responsePackage = await db.Package.destroy({
         where: {id}
       })
-      
+
       const responseSender = await db.Customer.destroy({
         where: {id: order.senderId}
       })
@@ -200,4 +202,3 @@ exports.updateService = (id, updatedData) => new Promise(async (resolve, reject)
       reject(error);
   }
 });
-

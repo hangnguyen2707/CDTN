@@ -16,6 +16,7 @@ function CreateTransactionPointModal(props) {
     address: '',
     warehouseId: '',
     pointLeaderId: null,
+    description: ''
   });
 
   const [formDataSubmit, setFormDataSubmit] = useState({
@@ -23,6 +24,7 @@ function CreateTransactionPointModal(props) {
     address: '',
     warehouseId: '',
     pointLeaderId: '',
+    description: ''
   });
 
   const { transactionPoints } = props;
@@ -35,7 +37,6 @@ function CreateTransactionPointModal(props) {
       const data = response?.data.response;
         const err = response?.data.err;
         const msg = response?.data.msg;
-        console.log(data)
         if (err === 0) {
           setLeaders(data)
         } else {
@@ -56,6 +57,7 @@ function CreateTransactionPointModal(props) {
         address: '',
         warehouseId: '',
         pointLeaderId: '',
+        description: ''
     });
     if (props.onHide) {
       props.onHide();
@@ -84,26 +86,28 @@ function CreateTransactionPointModal(props) {
         address: form.elements.address.value,
         warehouseId: form.elements.warehouseId.value,
         pointLeaderId: "",
+        description: formData.elements?.description.value,
       });
       console.log(formData)
-      // const payload = {
-      //   name: form.name,
-      //   address: formData.address,
-      //   warehouseId: formData.warehouse,
-      //   pointLeaderId: formData.transactionPointLeader
-      // }
+      const payload = {
+        name: form.name,
+        address: formData.address,
+        warehouseId: formData.warehouse,
+        pointLeaderId: formData.transactionPointLeader,
+        description: formData.description,
+      }
       apiCreateNewPoint(formData)
       window.location.reload()
-      // props.onHide();
-      // setFormData({
-      //   name: '',
-      //   address: '',
-      //   warehouse: '',
-      //   transactionPointLeader: '',
-      // });
+      props.onHide();
+      setFormData({
+        name: '',
+        address: '',
+        warehouse: '',
+        transactionPointLeader: '',
+        description: '',
+      });
     }
-  };
-
+    };
   console.log(formDataSubmit)
 
 
@@ -171,6 +175,21 @@ function CreateTransactionPointModal(props) {
                   </option>
                 ))}
               </Form.Control>
+            </Form.Group>
+          </Row>
+          <Row>
+          <Form.Group as={Col} md="12" controlId="description">
+              <Form.Label>Mô tả điểm giao dịch</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Nhập mô tả điểm giao dịch"
+                value={formData?.description}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Vui lòng nhập mô tả điểm giao dịch.
+              </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row style={{ marginTop: '10px' }}>

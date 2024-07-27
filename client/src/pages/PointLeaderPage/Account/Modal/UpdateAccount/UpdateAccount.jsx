@@ -21,6 +21,8 @@ function UpdateAccountModal(props) {
 
   const { account } = props;
   const [formData, setFormData] = useState({
+    user_id: "",
+    username: "",
     userName: "",
     phone: "",
     email: "",
@@ -31,6 +33,8 @@ function UpdateAccountModal(props) {
     if (account) {
       setFormData({
         ...account,
+        user_id: account.user_id || "",
+        username: account.username || "",
         userName: account.name || "",
         email: account.email || "",
         phone: account.phone || "",
@@ -55,8 +59,8 @@ function UpdateAccountModal(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const form = event.currentTarget;
+    console.log(form)
     if (form.checkValidity() === false) {
       event.stopPropagation();
       setValidated(true);
@@ -67,11 +71,13 @@ function UpdateAccountModal(props) {
       }
       console.log(formData)
       const payload = {
+        user_id: formData.user_id,
+        username: formData.username,
         id: account.id,
         name: formData.userName,
         email: formData.email,
         phone: formData.phone,
-        address: formData.address
+        // address: formData.address
       }
       apiUpdateUserById(payload)
       window.alert("Cập nhật thành công")
@@ -82,6 +88,8 @@ function UpdateAccountModal(props) {
   const handleHide = () => {
     setFormData({
       ...account,
+      user_id: account.user_id || "",
+      username: account.username || "",
       userName: account.name || "",
       phone: account.phone || "",
       email: account.email || "",
@@ -112,8 +120,26 @@ function UpdateAccountModal(props) {
       <Modal.Body>
         <Form validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="user_id">
+              <Form.Label>Mã nhân viên</Form.Label>
+              <Form.Control
+                type="text"
+                value={formData.user_id}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="username">
+              <Form.Label>Tên đăng nhập</Form.Label>
+              <Form.Control
+                type="text"
+                value={formData.username}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="userName">
-              <Form.Label>Tên tài khoản</Form.Label>
+              <Form.Label>Tên nhân viên</Form.Label>
               <Form.Control
                 type="text"
                 value={formData.userName}
@@ -130,23 +156,15 @@ function UpdateAccountModal(props) {
             </Form.Group>
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} md="6" controlId="userId">
-              <Form.Label>Mã nhân viên</Form.Label>
-              <Form.Control
-                type="text"
-                value={''}
-              />
-            </Form.Group>
             <Form.Group as={Col} md="6" controlId="password">
               <Form.Label>Mật khẩu</Form.Label>
               <Form.Control
-                type="text"
-                value={'Minhdat1234'}
+                type="password"
+                value={formData.password}
+                onChange={handleInputChange}
               />
             </Form.Group>
-          </Row>
-          <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="email">
+            <Form.Group as={Col} md="6" controlId="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="text"
@@ -154,6 +172,8 @@ function UpdateAccountModal(props) {
                 onChange={handleInputChange}
               />
             </Form.Group>
+          </Row>
+          {/* <Row className="mb-3">
             <Form.Group as={Col} controlId="address">
               <Form.Label>Địa chỉ</Form.Label>
               <Form.Control
@@ -162,7 +182,7 @@ function UpdateAccountModal(props) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-          </Row>
+          </Row> */}
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" type="submit" id="input-submit">

@@ -41,6 +41,18 @@ function WarehouseLeaderPackageReceivering() {
   const { warehouses } = useSelector((state) => state.warehouse);
   const [warehouseName, setWarehouseName] = useState("");
 
+  const [isTab1, setIsTab1] = useState(true);
+  const [isTab2, setIsTab2] = useState(false);
+
+
+  const handleTab1Click = () => {
+    navigate("/warehouseLeader/packageReceivering");
+  };
+
+  const handleTab2Click = () => {
+    navigate('/warehouseLeader/packageSending');
+  };
+
   useEffect(() => {
     dispatch(getAllWarehouses());
   }, []);
@@ -268,6 +280,10 @@ function WarehouseLeaderPackageReceivering() {
         onClick={handleOpenModal}
       />
       <div className="dashboard-content-container">
+      <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', marginTop: '20px' }}>
+        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab1Click}>Hàng gửi tới điểm bưu cục</Button>
+        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab2Click}>hàng gửi tới kho</Button>
+      </div>
         <div className="dashboard-content-header">
           <h2>Các đơn hàng nhận tại kho {warehouseName}</h2>
           <div className="dashboard-content-search">

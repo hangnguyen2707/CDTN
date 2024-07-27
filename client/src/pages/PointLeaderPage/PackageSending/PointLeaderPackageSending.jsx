@@ -38,6 +38,18 @@ function PointLeaderPackageSending() {
   const [statusPackage, setStatusPackage] = useState('');
   const [transactionPointName, setTransactionPointName] = useState("");
   const { transactionPoints } = useSelector((state) => state.transactionPoint);
+  const [isTab1, setIsTab1] = useState(true);
+  const [isTab2, setIsTab2] = useState(false);
+
+
+  const handleTab1Click = () => {
+    navigate("/pointLeader/packageSending");
+  };
+
+  const handleTab2Click = () => {
+    navigate('/pointLeader/packageReceivering');
+  };
+  
   useEffect(() => {
     dispatch(getAllTransactionPoints());
   }, []);
@@ -230,6 +242,10 @@ useEffect(() => {
     onClick={handleOpenModal}
   />
       <div className="dashboard-content-container">
+      <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', marginTop: '20px' }}>
+        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab1Click}>Thống kê hàng gửi đi</Button>
+        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab2Click}>Thống kê hàng gửi đến</Button>
+      </div>
         <div className="dashboard-content-header">
           <h2>Các đơn hàng chuẩn bị gửi đi tại điểm {transactionPointName}</h2>
           <div className="dashboard-content-search">

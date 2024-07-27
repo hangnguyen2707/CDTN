@@ -7,7 +7,7 @@ import { apiUpdateUserById } from "../../../../../services/user";
 import { apiLeader } from "../../../../../services/auth";
 import { apiUpdateWarehouseById } from "../../../../../services/warehouse";
 import { apiUpdatePointById } from "../../../../../services/transactionpoint";
-
+import bcrypt from 'bcryptjs';
 function UpdateAccountModal(props) {
   const dispatch = useDispatch();
   const [validated, setValidated] = useState(false);
@@ -15,6 +15,7 @@ function UpdateAccountModal(props) {
   const { transactionPoints } = useSelector((state) => state.transactionPoint);
   const [noLeaderWarehouses, setNoLeaderWarehouses] = useState([])
   const [noLeaderPoints, setNoLeaderPoints] = useState([])
+
 
   useEffect(() => {
     dispatch(getAllWarehouses());
@@ -47,6 +48,8 @@ function UpdateAccountModal(props) {
     if (account) {
       setFormData({
         ...account,
+        user_id: account.user_id || "",
+        username: account.username || "",
         userName: account.name || "",
         phone: account.phone || "",
         email: account.email || "",
@@ -55,6 +58,7 @@ function UpdateAccountModal(props) {
           account.Warehouses[0]?.name ||
           account.TransactionPoints[0]?.name ||
           "",
+        password: account.password || ""
       });
     }
   }, [account]);
@@ -69,10 +73,9 @@ function UpdateAccountModal(props) {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const form = event.currentTarget;
+    const form = await event.currentTarget;
     if (form.checkValidity() === false) {
       event.stopPropagation();
       setValidated(true);
@@ -81,13 +84,16 @@ function UpdateAccountModal(props) {
         window.alert("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại.");
         return;
       }
+      const hashedPassword = await bcrypt.hash(formData.password, 10);
       console.log(formData)
       const payload ={
         id: account.id,
+        user_id: formData.user_id,
+        username: formData.username,
         name: formData.userName,
         email: formData.email,
         phone: formData.phone,
-        address: formData.address,
+        password: hashedPassword,
         accountType: formData.role
       }
       apiUpdateUserById(payload)
@@ -132,6 +138,7 @@ function UpdateAccountModal(props) {
       phone: account.phone || "",
       email: account.email || "",
       role: account.accountType || "",
+      password: account.password || "",
       workLocation:
         account.Warehouses[0]?.name ||
         account.TransactionPoints[0]?.name ||
@@ -157,6 +164,34 @@ function UpdateAccountModal(props) {
       </Modal.Header>
       <Modal.Body>
         <Form validated={validated} onSubmit={handleSubmit}>
+        <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="user_id">
+              <Form.Label>Mã Nhân viên</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Nhập mã nhân viên"
+                value={formData.user_id}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Vui lòng nhập mã nhân viên
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="username">
+              <Form.Label>Tên tài khoản</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Nhập username"
+                value={formData.username}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Vui lòng nhập tên nhân viên.
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
           <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="userName">
               <Form.Label>Tên tài khoản</Form.Label>
@@ -186,11 +221,11 @@ function UpdateAccountModal(props) {
               </Form.Group>
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="address">
-              <Form.Label>Địa chỉ</Form.Label>
+            <Form.Group as={Col} controlId="password">
+              <Form.Label>Mật khẩu</Form.Label>
               <Form.Control
-                type="text"
-                value={formData.address}
+                type="password"
+                value={formData.password}
                 onChange={handleInputChange}
               />
             </Form.Group>

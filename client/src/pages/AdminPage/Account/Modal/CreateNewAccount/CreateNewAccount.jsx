@@ -33,10 +33,11 @@ function CreateNewAccountModal(props) {
     setNoLeaderPoints(filteredPoints)
   }, [transactionPoints])
   const [formData, setFormData] = useState({
+    user_id: "",
+    username: "",
     name: "",
     phone: "",
     email: null,
-    address: "",
     password: "",
     accountType: "",
     positionId: null,
@@ -44,10 +45,11 @@ function CreateNewAccountModal(props) {
 
   const handleHide = () => {
     setFormData({
+      user_id: "",
+      username: "",
       name: "",
       phone: "",
       email: null,
-      address: "",
       password: "",
       accountType: "",
       positionId: "",
@@ -98,10 +100,11 @@ function CreateNewAccountModal(props) {
 
 
       setFormData({
+        user_id: "",
+        username: "",
         name: "",
         phone: "",
         email: null,
-        address: "",
         password: "",
         accountType: "POINT_STAFF",
         positionId: localStorage.getItem('transactionPointId'),
@@ -125,18 +128,46 @@ function CreateNewAccountModal(props) {
       </Modal.Header>
       <Modal.Body>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Row className="mb-3">
-            <Form.Group as={Col} md="6" controlId="name">
-              <Form.Label>Tên tài khoản</Form.Label>
+        <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="user_id">
+              <Form.Label>Mã Nhân viên</Form.Label>
               <Form.Control
                 required
                 type="text"
-                placeholder="Nhập tên tài khoản"
+                placeholder="Nhập mã nhân viên"
+                value={formData.user_id}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Vui lòng nhập mã nhân viên
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="username">
+              <Form.Label>Tên đăng nhập</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Nhập tên đăng nhập"
+                value={formData.username}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Vui lòng nhập tên đăng nhập.
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="name">
+              <Form.Label>Tên nhân viên</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Nhập tên nhân viên"
                 value={formData.name}
                 onChange={handleInputChange}
               />
               <Form.Control.Feedback type="invalid">
-                Vui lòng nhập tên tài khoản.
+                Vui lòng nhập tên nhân viên.
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="email">
@@ -182,7 +213,7 @@ function CreateNewAccountModal(props) {
                 Vui lòng nhập mật khẩu.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="6" controlId="address">
+            {/* <Form.Group as={Col} md="6" controlId="address">
               <Form.Label>Địa chỉ</Form.Label>
               <Form.Control
                 required
@@ -194,7 +225,7 @@ function CreateNewAccountModal(props) {
               <Form.Control.Feedback type="invalid">
                 Vui lòng nhập địa chỉ.
               </Form.Control.Feedback>
-            </Form.Group>
+            </Form.Group> */}
           </Row>
           <Row style={{ marginTop: "10px" }} className="mb-3">
             <Form.Group as={Col} md="6" controlId="accountType">

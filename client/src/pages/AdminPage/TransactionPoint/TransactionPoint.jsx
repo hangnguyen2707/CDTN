@@ -181,7 +181,7 @@ function TransactionPoint() {
       <HeaderRole btnText="Thêm điểm bưu cục" onClick={setIsModalOpen} />
       <div className="dashboard-content-container">
         <div className="dashboard-content-header">
-          <h2>Điểm bưu cục</h2>
+          <h2>Quản lý điểm bưu cục</h2>
           <div className="dashboard-content-search">
             <input
               type="text"
@@ -200,6 +200,7 @@ function TransactionPoint() {
             <th>TÊN TRƯỞNG ĐIỂM</th>
             <th>TÊN ĐIỂM</th>
             <th>ĐỊA CHỈ</th>
+            <th>MÔ TẢ</th>
           </thead>
 
           {transactions.length !== 0 ? (
@@ -220,6 +221,9 @@ function TransactionPoint() {
                   </td>
                   <td>
                     <span>{transaction.address}</span>
+                  </td>
+                  <td>
+                    <span>{transaction.description}</span>
                   </td>
                   <td>
                     <ul class="list-inline m-0">

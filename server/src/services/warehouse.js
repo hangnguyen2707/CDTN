@@ -10,7 +10,8 @@ exports.createService = (body) => new Promise(async(resolve, reject) => {
         const response = await db.Warehouse.create({
             name: body.name,
             address: body.address,
-            leaderId: body.leaderId
+            leaderId: body.leaderId,
+            description: body.description
         })
         resolve({
             err: response? 0 : 2,
@@ -24,7 +25,7 @@ exports.createService = (body) => new Promise(async(resolve, reject) => {
 exports.getAllService = () => new Promise(async(resolve, reject) => {
     try {
         const response = await db.Warehouse.findAll({
-            attributes: ['id','name', 'address'],
+            attributes: ['id','name', 'address', 'description'],
             include: [
               {
                 model: db.Accounts,
@@ -58,7 +59,7 @@ exports.deleteService = (id) => new Promise(async(resolve, reject) => {
             where: {packageId: id}
           })
 
-            
+
             const responseSender = await db.Customer.destroy({
               where: {id: package.senderId}
             })
@@ -87,17 +88,17 @@ exports.deleteService = (id) => new Promise(async(resolve, reject) => {
         const responseWarehouse = await db.Warehouse.destroy({
           where: {id}
         })
-    
+
         resolve({
           err: responsePoint && responseWarehouse && responseEmployee ? 0 : 2,
           msg: responsePoint && responseWarehouse && responseEmployee ? 'Delete is successfully' : `Can't find this id`,
         })
-  
+
       } catch (error) {
         reject(error)
     }
   })
-  
+
   exports.updateService = (id, updatedData) => new Promise(async (resolve, reject) => {
     try {
         const [rowsAffected] = await db.Warehouse.update(updatedData, {
@@ -109,7 +110,7 @@ exports.deleteService = (id) => new Promise(async(resolve, reject) => {
             err: rowsAffected> 0 ? 0 : 2,
             msg: rowsAffected> 0 ? successMessage : errorMessage,
         };
-  
+
         resolve(response);
     } catch (error) {
         reject(error);
@@ -194,7 +195,7 @@ exports.deleteService = (id) => new Promise(async(resolve, reject) => {
         msg: filteredResponse.length > 0 ? 'Get Packages is successfully' : `Can't find this id or no matching items`,
         response: filteredResponse
       });
-  
+
       } catch (error) {
         reject(error)
     }
@@ -227,13 +228,13 @@ exports.deleteService = (id) => new Promise(async(resolve, reject) => {
           },
         ]
     })
-  
+
       resolve({
         err: response.length > 0 ? 0 : 2,
         msg: response.length > 0 ? 'Get points is successfully' : `Can't find this id or no matching items`,
         response
       });
-  
+
       } catch (error) {
         reject(error)
     }

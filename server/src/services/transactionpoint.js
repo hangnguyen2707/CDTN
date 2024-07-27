@@ -11,7 +11,8 @@ exports.createService = (body) => new Promise(async(resolve, reject) => {
             warehouseId: body.warehouseId,
             pointLeaderId: body.pointLeaderId,
             name: body.name,
-            address: body.address
+            address: body.address,
+            description: body.description
         })
         resolve({
             err: response? 0 : 2,
@@ -25,7 +26,7 @@ exports.createService = (body) => new Promise(async(resolve, reject) => {
 exports.getAllService = () => new Promise(async(resolve, reject) => {
     try {
         const response = await db.TransactionPoint.findAll({
-            attributes: ['id','name', 'address'],
+            attributes: ['id','name', 'address', 'description'],
             include: [
                 {
                 model: db.Warehouse,
@@ -67,7 +68,7 @@ exports.updateService = (id, updatedData) => new Promise(async (resolve, reject)
             err: rowsAffected> 0 ? 0 : 2,
             msg: rowsAffected> 0 ? successMessage : errorMessage,
         };
-  
+
         resolve(response);
     } catch (error) {
         reject(error);
@@ -152,7 +153,7 @@ exports.updateService = (id, updatedData) => new Promise(async (resolve, reject)
         msg: filteredResponse.length > 0 ? 'Get Packages is successfully' : `Can't find this id or no matching items`,
         response: filteredResponse
       });
-  
+
       } catch (error) {
         reject(error)
     }

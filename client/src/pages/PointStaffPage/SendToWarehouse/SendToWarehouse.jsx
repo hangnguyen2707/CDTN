@@ -197,7 +197,7 @@ function PointStaffSendToWarehouse() {
         // dialogClassName="modal-dialog-custom"
         show={isModalOpen}
         onHide={handleCloseModal}
-        style={{ zIndex: 9999 }} 
+        style={{ zIndex: 9999 }}
       />
       <div className="dashboard-content-container">
         <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', marginTop: '20px' }}>
@@ -224,6 +224,8 @@ function PointStaffSendToWarehouse() {
             <th>TRẠNG THÁI</th>
             <th>ĐIỂM KẾ TIẾP</th>
             <th>CƯỚC PHÍ</th>
+            {/* <th>LOẠI HÀNG HÓA</th>
+            <th>CHÚ THÍCH</th> */}
             <th>CẬP NHẬT LẦN CUỐI</th>
           </thead>
 
@@ -269,6 +271,12 @@ function PointStaffSendToWarehouse() {
                   <td>
                     <span>{order.shippingCost}</span>
                   </td>
+                  {/* <td>
+                    <span>{order.type}</span>
+                  </td>
+                  <td>
+                    <span>{order.note}</span>
+                  </td> */}
                   <td>
                     <span>2024-07-19T14:40:22.000Z</span>
                   </td>

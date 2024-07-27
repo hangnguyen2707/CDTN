@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     warehouseId: DataTypes.INTEGER,
     pointLeaderId: DataTypes.INTEGER,
     name: DataTypes.STRING(30),
-    address: DataTypes.STRING
+    address: DataTypes.STRING,
+    description: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'TransactionPoint',

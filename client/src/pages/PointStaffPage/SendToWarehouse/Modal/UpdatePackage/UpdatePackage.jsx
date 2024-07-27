@@ -35,18 +35,18 @@ function UpdatePackageModal(props) {
         weight: "",
       });
       setPrice(order?.shippingCost);
-    
+
   }, [order])
-  
+
 
   useEffect(() => {
     const calculatedPrice = 3000 * parseFloat(formData?.weight) || 0;
     if (calculatedPrice > 10000) {
       setPrice(calculatedPrice);
-      formData.shippingCost = String(calculatedPrice) 
+      formData.shippingCost = String(calculatedPrice)
       // console.log(formData?.shippingCost)
     }
-    else { 
+    else {
       setPrice(10000);
     formData.shippingCost = String(price)
   }
@@ -94,7 +94,7 @@ function UpdatePackageModal(props) {
       [id]: value,
     });
   };
-  
+
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -125,6 +125,7 @@ const handleClose = () => {
       district: "",
       ward: "",
       street: "",
+
     },
     weight: "",
   });
@@ -228,7 +229,7 @@ const handleClose = () => {
           },
         }));
       }}
-      isInvalid={!receiverProvince && validated}  
+      isInvalid={!receiverProvince && validated}
     >
       <option value="">Chọn tỉnh</option>
       {receiverProvinces.map((province) => (
@@ -240,14 +241,14 @@ const handleClose = () => {
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="receiverAddressDistrict">
               <Form.Label></Form.Label>
-              <Form.Control as="select" value={receiverDistrict} 
+              <Form.Control as="select" value={receiverDistrict}
               // required
               onChange={(e) => {
                 const selectedDistrictId = e.target.value;
                 const selectedDistrict = receiverDistricts.find(
                   (district) => district.district_id === selectedDistrictId
                 );
-          
+
                 setReceiverDistrict(selectedDistrictId);
                 setFormData((prevData) => ({
                   ...prevData,
@@ -277,7 +278,7 @@ const handleClose = () => {
                 const selectedWard = receiverWards.find(
                   (ward) => ward.ward_id === selectedWardId
                 );
-          
+
                 setReceiverWard(selectedWardId);
                 setFormData((prevData) => ({
                   ...prevData,
@@ -328,27 +329,49 @@ const handleClose = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} controlId="weight">
-        <Form.Label>Kích thước đơn hàng (kg)</Form.Label>
-        <Form.Control
-          // required
-          type="text"
-          // placeholder="kg"
-          defaultValue={formData?.weight}
-          onChange={handleInputChange}
-        />
-        <Form.Control.Feedback type="invalid">
-          Vui lòng nhập kích thước đơn hàng.
-        </Form.Control.Feedback>
-      </Form.Group>
-      <Form.Group as={Col} controlId="price">
-      <Form.Label>Giá vận chuyển (VND)</Form.Label>
-      <Form.Control
-        type="text"
-        placeholder="Giá vận chuyển"
-        value={price}
-        readOnly
-      />
-    </Form.Group>
+            <Form.Label>Kích thước đơn hàng (kg)</Form.Label>
+            <Form.Control
+              // required
+              type="text"
+              // placeholder="kg"
+              defaultValue={formData?.weight}
+              onChange={handleInputChange}
+            />
+            <Form.Control.Feedback type="invalid">
+              Vui lòng nhập kích thước đơn hàng.
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group as={Col} controlId="price">
+          <Form.Label>Giá vận chuyển (VND)</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Giá vận chuyển"
+            value={price}
+            readOnly
+          />
+        </Form.Group>
+          </Row>
+          <Row>
+          <Form.Group as={Col} md="6" controlId="type">
+              <Form.Label>Loại hàng hóa</Form.Label>
+              <Form.Select value={formData.type} onChange={handleInputChange}>
+                <option value="">Chọn loại hàng hóa</option>
+                <option value="document">tài liệu (document)</option>
+                <option value="goods">hàng hoá (goods)</option>
+                <option value="sample">mẫu (sample)</option>
+                <option value="others">khác (others)</option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="note">
+              <Form.Label>Ghi chú</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={5}
+                value={formData.note}
+                onChange={handleInputChange}
+                placeholder="Write your note here..."
+              />
+            </Form.Group>
           </Row>
           <Row>
             <div className="text-center mt-3">

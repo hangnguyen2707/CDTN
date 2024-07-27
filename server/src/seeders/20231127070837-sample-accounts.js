@@ -16,6 +16,8 @@ module.exports = {
         // Sample data for the first record
         name: 'Huong',
         phone: generateRandomPhoneNumber(),
+        username: "boss_1",
+        user_id: "b-1",
         email: "boss@gmail.com",
         password: '$2a$12$1bswV8ED5ZV.WrmRY37kMeaghRHSdmhgnyuQZ/.ytoQUmf94LATAe',
         accountType: 'BOSS',
@@ -27,6 +29,8 @@ module.exports = {
         // Sample data for the first record
         name: 'Dat',
         phone: generateRandomPhoneNumber(),
+        username: "lead-1",
+        user_id: "l-1",
         email: "pointleader1@gmail.com",
         password: '$2a$12$1bswV8ED5ZV.WrmRY37kMeaghRHSdmhgnyuQZ/.ytoQUmf94LATAe',
         accountType: 'POINT_LEADER',
@@ -38,6 +42,8 @@ module.exports = {
         // Sample data for the second record
         name: 'Vi',
         phone: generateRandomPhoneNumber(),
+        username: "lead-2",
+        user_id: "l-1",
         email: "warehouseleader1@gmail.com",
         password: '$2a$12$1bswV8ED5ZV.WrmRY37kMeaghRHSdmhgnyuQZ/.ytoQUmf94LATAe',
         accountType: 'WAREHOUSE_LEADER',
@@ -49,6 +55,8 @@ module.exports = {
         // Sample data for the first record
         name: 'Huy',
         phone: generateRandomPhoneNumber(),
+        username: "staff-1",
+        user_id: "s-1",
         email: "pointstaff1@gmail.com",
         password: '$2a$12$1bswV8ED5ZV.WrmRY37kMeaghRHSdmhgnyuQZ/.ytoQUmf94LATAe',
         accountType: 'POINT_STAFF',
@@ -60,6 +68,8 @@ module.exports = {
         // Sample data for the first record
         name: 'Lien',
         phone: generateRandomPhoneNumber(),
+        username: "staff-2",
+        user_id: "s-2",
         email: "warehousestaff1@gmail.com",
         password: '$2a$12$1bswV8ED5ZV.WrmRY37kMeaghRHSdmhgnyuQZ/.ytoQUmf94LATAe',
         accountType: 'WAREHOUSE_STAFF',

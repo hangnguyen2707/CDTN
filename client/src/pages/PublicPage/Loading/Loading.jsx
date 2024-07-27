@@ -60,7 +60,7 @@ const Loading = () => {
                 <div className='loadingPost'>
                   <h1>Bạn có biết?</h1>
                   <br></br>
-                  <p>Magic Post là đơn vị vận chuyển có số lượng người dùng trong năm 2023 cao nhất Việt Nam</p>
+                  <p>Express là đơn vị vận chuyển có số lượng người dùng trong năm 2024 cao nhất Việt Nam</p>
                 </div>
                 <img src={runner} alt="" />
               </div>

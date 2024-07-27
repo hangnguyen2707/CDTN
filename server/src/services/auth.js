@@ -10,12 +10,13 @@ exports.registerService = (body) => new Promise(async(resolve, reject) => {
         const response = await db.Accounts.findOrCreate({
             where: {phone: body.phone},
             defaults: {
+                user_id: body.user_id,
+                username: body.username,
                 name: body.name,
                 phone: body.phone,
                 email: body.email,
                 password: hashPassword(body.password),
                 accountType: body.accountType,
-                address: body.address
             }
         })
 

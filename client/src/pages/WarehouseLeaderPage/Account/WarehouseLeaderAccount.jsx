@@ -172,6 +172,8 @@ const WarehouseLeaderAccount = () => {
         <table>
           <thead>
             <th>ID</th>
+            <th>MÃ NHÂN VIÊN</th>
+            <th>TÊN ĐĂNG NHẬP</th>
             <th>TÊN</th>
             <th>EMAIL</th>
             <th>SỐ ĐIỆN THOẠI</th>
@@ -182,6 +184,12 @@ const WarehouseLeaderAccount = () => {
                 <tr key={index}>
                   <td>
                     <span>{account.id}</span>
+                  </td>
+                  <td>
+                    <span>{account.user_id}</span>
+                  </td>
+                  <td>
+                    <span>{account.username}</span>
                   </td>
                   <td>
                     <span>{account.name}</span>

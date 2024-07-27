@@ -24,6 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     packageCode: DataTypes.STRING,
     senderId: DataTypes.INTEGER,
     receiverId: DataTypes.INTEGER,
+    type: DataTypes.STRING,
+    note: DataTypes.STRING(100),
     transactionPointStartId: DataTypes.INTEGER,
     warehouseStartId: DataTypes.INTEGER,
     warehouseEndId: DataTypes.INTEGER,

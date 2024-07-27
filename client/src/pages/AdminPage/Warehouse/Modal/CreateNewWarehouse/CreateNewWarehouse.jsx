@@ -17,15 +17,17 @@ function CreateNewWarehouseModal(props) {
   const [formData, setFormData] = useState({
     name: '',
     address: '',
-    leaderId: null,
+    // leaderId: null,
+    description: ''
   });
 
   const [formDataSubmit, setFormDataSubmit] = useState({
     name: '',
     address: '',
-    leaderId: '',
+    // leaderId: '',
+    description: ''
   });
-  
+
 
   const { warehouses } = props;
 
@@ -45,7 +47,8 @@ function CreateNewWarehouseModal(props) {
     setFormData({
       name: '',
       address: '',
-      leaderId: '',
+      // leaderId: '',
+      description: ''
     });
     if (props.onHide) {
       props.onHide();
@@ -96,8 +99,8 @@ function CreateNewWarehouseModal(props) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); 
-  
+    event.preventDefault();
+
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.stopPropagation();
@@ -106,18 +109,21 @@ function CreateNewWarehouseModal(props) {
       setFormData({
         name: form.elements?.name.value,
         address: form.elements.address.value,
-        leaderId: form.elements.leaderId.value,
+        // leaderId: form.elements.leaderId.value,
+        description: form.elements.description.value
       });
 
       console.log(formData)
       apiCreateNewWarehouse(formData)
       window.location.reload();
 
-      props.onHide(); 
+      props.onHide();
       setFormData({
         name: '',
         address: '',
-        leaderId: '',
+        // leaderId: '',
+        description: ''
+
       });
     }
   };
@@ -169,16 +175,20 @@ function CreateNewWarehouseModal(props) {
                 Vui lòng nhập tên thành phố.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="5" controlId="leaderId">
-              <Form.Label>Trưởng kho hàng</Form.Label>
-              <Form.Control as="select" value={formData.leaderId} onChange={(e) => setleaderId(e.target.value)}>
-                <option>Chọn trưởng kho</option>
-                {leaders.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item?.name}
-                  </option>
-                ))}
-              </Form.Control>
+            </Row>
+            <Row>
+            <Form.Group as={Col} controlId="description">
+              <Form.Label>Mô tả</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Nhập mô tả"
+                value={formData.description}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Vui lòng nhập mô tả.
+              </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row style={{ marginTop: '10px' }}>

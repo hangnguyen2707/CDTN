@@ -399,7 +399,7 @@ function Package() {
       />
       <div className="dashboard-content-container">
         <div className="dashboard-content-header">
-          <h2>Đơn hàng</h2>
+          <h2>Tổng quát</h2>
           {/* <div className="dashboard-content-search">
             <input
               type="text"

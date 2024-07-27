@@ -164,7 +164,7 @@ const renderPagination = () => {
             />
             <div className='dashboard-content-container'>
                 <div className='dashboard-content-header'>
-                    <h2>Kho hàng</h2>
+                    <h2>Quản lý điểm kho</h2>
                     <div className='dashboard-content-search'>
                         <input
                             type='text'
@@ -182,6 +182,7 @@ const renderPagination = () => {
                         <th>TÊN KHO HÀNG</th>
                         <th>ĐỊA CHỈ KHO HÀNG</th>
                         <th>TRƯỞNG KHO</th>
+                        <th>MÔ TẢ</th>
                     </thead>
 
                     {warehousesAll.length !== 0 ? (
@@ -192,6 +193,7 @@ const renderPagination = () => {
                                     <td><span>{warehouse?.name}</span></td>
                                     <td><span>{warehouse?.address}</span></td>
                                     <td><span>{warehouse?.warehouseLeader?.name}</span></td>
+                                    <td><span>{warehouse?.description}</span></td>
                                     <td>
                                         <ul className="list-inline m-0">
                                             <li className="list-inline-item">

@@ -18,11 +18,12 @@ function UpdateTransactionPoint(props) {
       address: "",
       warehouse: "",
       transactionPointLeader: "",
+      description: ""
     });
     const { warehouses } = useSelector((state) => state.warehouse);
     const { transactionPoints } = useSelector((state) => state.transactionPoint);
     const { transactionPoint } = props;
-  
+
     useEffect(() => {
       dispatch(getAllWarehouses());
       dispatch(getAllTransactionPoints());
@@ -41,14 +42,14 @@ function UpdateTransactionPoint(props) {
           } else {
             console.log(msg)
           }
-  
+
         } catch (error) {
           console.error('Error fetching leaders:', error);
         }
       };
       fetchWarehouseLeader();
     }, []);
-  
+
     useEffect(() => {
       if (transactionPoint) {
         setFormData((prevData) => ({
@@ -57,10 +58,11 @@ function UpdateTransactionPoint(props) {
           address: transactionPoint.address || "",
           warehouse: transactionPoint.Warehouse?.id,
           transactionPointLeader: transactionPoint.pointLeaderId,
+          description: transactionPoint.description || ""
         }));
       }
     }, [transactionPoints, transactionPoint]);
-  
+
     const handleHide = () => {
       setFormData((prevData) => ({
         ...prevData,
@@ -68,22 +70,23 @@ function UpdateTransactionPoint(props) {
         address: transactionPoint.address || "",
         warehouse: "",
         transactionPointLeader: "",
+        description: transactionPoint.description || ""
       }));
       if (props.onHide) {
         props.onHide();
       }
     };
-  
+
     const handleInputChange = (event) => {
       const { id, value } = event.target;
-  
+
       setFormData((prevData) => ({
         ...prevData,
         [id]: value,
       }));
     };
-  
-  
+
+
     const handleSubmit = (event) => {
       const form = event.currentTarget;
       if (form.checkValidity() === false) {
@@ -97,30 +100,31 @@ function UpdateTransactionPoint(props) {
           name: formData.name,
           address: formData.address,
           pointLeaderId: formData.transactionPointLeader,
-          warehouseId: formData.warehouse
+          warehouseId: formData.warehouse,
+          description: formData.description
         }
         apiUpdatePointById(payload)
         window.alert("Cập nhật điểm giao dịch thành công")
         window.location.reload()
       }
-  
+
       setValidated(true);
     };
-  
+
     const setWarehouse = (value) => {
       setFormData((prevData) => ({
         ...prevData,
         warehouse: value,
       }));
     };
-  
+
     const setTransactionPointLeader = (value) => {
       setFormData((prevData) => ({
         ...prevData,
         transactionPointLeader: value,
       }));
     };
-  
+
   return (
     <Modal
       {...props}
@@ -180,7 +184,8 @@ function UpdateTransactionPoint(props) {
               </Form.Control>
             </Form.Group>
           </Row>
-          <Form.Group as={Col} md="5" controlId="transactionPointLeader">
+          <Row>
+          {/* <Form.Group as={Col} md="5" controlId="transactionPointLeader">
             <Form.Label>Trưởng điểm</Form.Label>
             <Form.Control
               as="select"
@@ -194,7 +199,21 @@ function UpdateTransactionPoint(props) {
                 </option>
               ))}
             </Form.Control>
-          </Form.Group>
+          </Form.Group> */}
+          <Form.Group as={Col} controlId="description">
+              <Form.Label>Mô tả điểm giao dịch</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Nhập mô tả"
+                value={formData.description}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Vui lòng nhập mô tả điểm giao dịch
+              </Form.Control.Feedback>
+            </Form.Group>
+            </Row>
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" id="input-submit" onClick={handleSubmit}>

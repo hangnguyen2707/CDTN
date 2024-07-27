@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
   Warehouse.init({
     name: DataTypes.STRING(30),
     address: DataTypes.STRING,
-    leaderId: DataTypes.INTEGER
+    leaderId: DataTypes.INTEGER,
+    description: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Warehouse',

@@ -14,6 +14,7 @@ function UpdateWarehouseModal(props) {
     address: "",
     warehouseLeader: "",
     leaderId: "",
+    description: ""
   });
   const { selectWarehouse } = props;
   // console.log(selectWarehouse);
@@ -48,10 +49,12 @@ function UpdateWarehouseModal(props) {
         address: selectWarehouse.address,
         selectWarehouseLeader: selectWarehouse.warehouseLeader?.name,
         leaderId: selectWarehouse.warehouseLeader?.id,
+        description: selectWarehouse?.description
+
       });
     }
   }, [selectWarehouse]);
-  
+
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
@@ -153,7 +156,7 @@ function UpdateWarehouseModal(props) {
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
-            <Form.Group as={Col} md="5" controlId="warehouseLeader">
+            {/* <Form.Group as={Col} md="5" controlId="warehouseLeader">
               <Form.Label>Trưởng kho hàng</Form.Label>
 
               <Form.Control
@@ -169,6 +172,26 @@ function UpdateWarehouseModal(props) {
                   </option>
                 ))}
               </Form.Control>
+            </Form.Group> */}
+          </Row>
+          <Row>
+          <Form.Group as={Col} controlId="description">
+              <Form.Label>Mô tả</Form.Label>
+              <InputGroup hasValidation>
+                <Form.Control
+                  type="text"
+                  placeholder="Nhập mô tả"
+                  aria-describedby="inputGroupPrepend"
+                  required
+
+                  value={formData?.description}
+
+                  onChange={handleInputChange}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Vui lòng nhập mô tả.
+                </Form.Control.Feedback>
+              </InputGroup>
             </Form.Group>
           </Row>
           <Row style={{ marginTop: "10px" }}>
