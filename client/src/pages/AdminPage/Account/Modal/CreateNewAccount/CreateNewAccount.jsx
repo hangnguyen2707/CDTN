@@ -76,7 +76,7 @@ function CreateNewAccountModal(props) {
       setValidated(true);
     } else {
       if (formData.phone[0] !== '0' || !(formData.phone.match('[0-9]{10}'))) {
-        window.alert("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại.");
+        window.alert("Dữ liệu không đúng. Vui lòng kiểm tra lại.");
         return;
       }
       console.log(formData)
@@ -122,7 +122,7 @@ function CreateNewAccountModal(props) {
     >
       <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
-          Tạo tài khoản trưởng kho/trưởng điểm
+          Tạo tài khoản trưởng kho/ trưởng điểm bưu cục
         </Modal.Title>
         <CloseIcon onClick={handleHide}>Đóng</CloseIcon>
       </Modal.Header>
@@ -213,19 +213,7 @@ function CreateNewAccountModal(props) {
                 Vui lòng nhập mật khẩu.
               </Form.Control.Feedback>
             </Form.Group>
-            {/* <Form.Group as={Col} md="6" controlId="address">
-              <Form.Label>Địa chỉ</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="Nhập địa chỉ"
-                value={formData.address}
-                onChange={handleInputChange}
-              />
-              <Form.Control.Feedback type="invalid">
-                Vui lòng nhập địa chỉ.
-              </Form.Control.Feedback>
-            </Form.Group> */}
+          
           </Row>
           <Row style={{ marginTop: "10px" }} className="mb-3">
             <Form.Group as={Col} md="6" controlId="accountType">
@@ -241,7 +229,7 @@ function CreateNewAccountModal(props) {
                 <option value="" disabled>
                   Chọn loại tài khoản
                 </option>
-                <option value="POINT_LEADER">Trưởng điểm</option>
+                <option value="POINT_LEADER">TRƯỞNG ĐIỂM BƯU CỤC</option>
                 <option value="WAREHOUSE_LEADER">Trưởng kho</option>
               </Form.Control>
               <Form.Control.Feedback type="invalid">
@@ -280,7 +268,7 @@ function CreateNewAccountModal(props) {
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" id="input-submit" type="submit">
-                Tạo mới
+                Thêm
               </Button>
               <Button variant="secondary" onClick={handleHide}>
                 Đóng

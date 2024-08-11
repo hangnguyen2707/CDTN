@@ -186,7 +186,7 @@ function UpdateAccountModal(props) {
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" type="submit" id="input-submit">
-                Cập nhật
+                Lưu
               </Button>
               <Button variant="secondary" onClick={handleHide}>
                 Đóng

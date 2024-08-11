@@ -30,17 +30,7 @@ const UpdateSendToWarehouse = ({ showModal, handleClose, selectedPackage }) => {
     }
     apiUpdatePackageById(payload)
     window.location.reload();
-    // Find the selected warehouse by ID
-    
-
-    // Assign the warehouse ID to selectedPackage.warehouseEnd.id
-    // if (selectedWarehouseObj) {
-    //   selectedPackage.warehouseEnd = {
-    //     id: selectedWarehouseObj.id,
-    //     name: selectedWarehouseObj.name,
-    //   };
-    // }
-
+ 
     handleClose();
   };
 
@@ -57,24 +47,8 @@ const UpdateSendToWarehouse = ({ showModal, handleClose, selectedPackage }) => {
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           <p>ID: {selectedPackage?.id}</p>
-          <p>Người gửi: {selectedPackage?.sender.name}</p>
-          <p>Người nhận: {selectedPackage?.receiver.name}</p>
           <p>Kho kế tiếp: {selectedWarehouse?.name}</p>
-          {/* <Form.Group controlId="selectedWarehouse">
-            <Form.Label>Kho kế tiếp:</Form.Label> */}
-           {/* <Form.Control
-              as="select"
-              value={selectedWarehouse}
-              onChange={(e) => setSelectedWarehouse(e.target.value)}
-            >
-              <option value="">Chọn kho</option>
-              {warehouses.map((warehouse) => (
-                <option key={warehouse.id} value={warehouse.name}>
-                  {warehouse.name}
-                </option>
-              ))}
-              </Form.Control> */}
-          {/* </Form.Group> */}
+          
           </Form>
       </Modal.Body>
       <Modal.Footer>

@@ -34,9 +34,6 @@ const UpdateReceiveFromWarehouse = ({ showModal, handleClose, selectedPackage })
       </Modal.Header>
       <Modal.Body>
         <p>Xác nhận đơn hàng nhập kho hàng {localStorage.getItem('warehouseId')}:</p>
-        <p>ID: {selectedPackage?.id}</p>
-        <p>Ngưởi gửi: {selectedPackage?.sender.name}</p>
-        <p>Người nhận: {selectedPackage?.receiver.name}</p>
         <p>Kho chuyển tới: {selectedPackage?.warehouseStart.name}</p>
       </Modal.Body>
       <Modal.Footer>

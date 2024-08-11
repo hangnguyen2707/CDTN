@@ -30,14 +30,11 @@ const UpdateReceiveFromTransaction = ({ showModal, handleClose, selectedPackage 
       keyboard={false}
     >
       <Modal.Header closeButton>
-        <Modal.Title>Nhận đơn hàng từ điểm giao dịch</Modal.Title>
+        <Modal.Title>Nhận đơn hàng từ điểm bưu cục</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>Xác nhận đơn hàng nhập kho hàng {localStorage.getItem('warehouseId')}:</p>
-        <p>ID: {selectedPackage?.id}</p>
-        <p>Ngưởi gửi: {selectedPackage?.sender.name}</p>
-        <p>Người nhận: {selectedPackage?.receiver.name}</p>
-        <p>Điểm giao dịch chuyển tới: {selectedPackage?.transactionPointStart.name}</p>
+        
+        <p>Điểm bưu cục chuyển tới: {selectedPackage?.transactionPointStart.name}</p>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>

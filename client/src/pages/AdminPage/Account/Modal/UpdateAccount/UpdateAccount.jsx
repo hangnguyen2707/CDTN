@@ -239,7 +239,7 @@ function UpdateAccountModal(props) {
                 onChange={handleInputChange}
               >
                 <option value="">Chọn chức vụ</option>
-                <option value="POINT_LEADER">Trưởng điểm</option>
+                <option value="POINT_LEADER">TRƯỞNG ĐIỂM BƯU CỤC</option>
                 <option value="WAREHOUSE_LEADER">Trưởng kho</option>
               </Form.Control>
             </Form.Group>
@@ -274,7 +274,7 @@ function UpdateAccountModal(props) {
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" type="submit" id="input-submit">
-                Cập nhật
+                Lưu
               </Button>
               <Button variant="secondary" onClick={handleHide}>
                 Đóng

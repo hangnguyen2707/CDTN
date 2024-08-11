@@ -186,13 +186,13 @@ const handleClose = () => {
     >
       <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
-          Tạo đơn hàng mới
+          Ghi nhận đơn hàng 
         </Modal.Title>
         <CloseIcon onClick={handleClose}>Đóng</CloseIcon>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          {/* Sender Information */}
+  
           <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="senderName">
               <Form.Label>Tên người gửi</Form.Label>
@@ -396,7 +396,7 @@ const handleClose = () => {
           <Row>
             <div className="text-center mt-3">
               <Button variant="secondary" onClick={handleSubmit} id="input-submit">
-                Tạo mới
+                Thêm
               </Button>
               <Button variant="secondary" onClick={handleClose}>
                 Đóng

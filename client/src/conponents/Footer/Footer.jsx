@@ -18,15 +18,15 @@ const Footer = () => {
                         <h3>Chúng tôi</h3>
                         <ul>
                             <li><a href="#">Công ty</a></li>
-                            <li><a href="#">Nhóm </a></li>
-                            <li><a href="#">Kinh tế</a></li>
+                            <li><a href="#">Đối tác </a></li>
+                            <li><a href="#">Cơ hội nghề nghiệp</a></li>
                         </ul>
                     </div>
                     <div className="colItem3">
                         <h3>Địa điểm làm việc</h3>
                         <ul>
                             <li><a href="#">Kho hàng</a></li>
-                            <li><a href="#">Điểm giao dịch</a></li>
+                            <li><a href="#">Điểm bưu cục</a></li>
                             <li><a href="#">Website</a></li>
                         </ul>
                     </div>

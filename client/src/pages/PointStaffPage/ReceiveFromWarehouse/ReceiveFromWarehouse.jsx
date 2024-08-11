@@ -186,7 +186,7 @@ function PointStaffReceiveFromWarehouse() {
                     <span>{order.shippingCost}</span>
                   </td>
                   <td>
-                    <span>2024-07-19T14:40:22.000Z</span>
+                    <span>2024-08-14T14:40:22.000Z</span>
                   </td>
                   <li class="list-inline-item">
                     <button

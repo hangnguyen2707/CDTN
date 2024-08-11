@@ -158,7 +158,7 @@ const WarehouseLeaderAccount = () => {
       />
       <div className="dashboard-content-container">
         <div className="dashboard-content-header">
-          <h2>Quản lý nhân viên tại kho {warehouseName}</h2>
+          <h2>Quản lý nhân viên</h2>
           <div className="dashboard-content-search">
             <input
               type="text"
@@ -171,9 +171,8 @@ const WarehouseLeaderAccount = () => {
         </div>
         <table>
           <thead>
-            <th>ID</th>
+            <th>STT</th>
             <th>MÃ NHÂN VIÊN</th>
-            <th>TÊN ĐĂNG NHẬP</th>
             <th>TÊN</th>
             <th>EMAIL</th>
             <th>SỐ ĐIỆN THOẠI</th>
@@ -183,14 +182,12 @@ const WarehouseLeaderAccount = () => {
               {accounts.map((account, index) => (
                 <tr key={index}>
                   <td>
-                    <span>{account.id}</span>
+                    <span>{index+1}</span>
                   </td>
                   <td>
                     <span>{account.user_id}</span>
                   </td>
-                  <td>
-                    <span>{account.username}</span>
-                  </td>
+                  
                   <td>
                     <span>{account.name}</span>
                   </td>

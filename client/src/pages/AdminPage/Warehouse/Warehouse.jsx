@@ -178,7 +178,7 @@ const renderPagination = () => {
 
                 <table>
                     <thead>
-                        <th>ID</th>
+                        <th>STT</th>
                         <th>TÊN KHO HÀNG</th>
                         <th>ĐỊA CHỈ KHO HÀNG</th>
                         <th>TRƯỞNG KHO</th>

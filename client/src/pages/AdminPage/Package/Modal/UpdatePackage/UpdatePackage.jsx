@@ -353,7 +353,7 @@ const handleClose = () => {
           <Row>
             <div className="text-center mt-3">
               <Button variant="secondary" onClick={handleSubmit} id="input-submit">
-                Cập nhật
+                Lưu
               </Button>
               <Button variant="secondary" onClick={handleClose}>
                 Đóng

@@ -38,7 +38,7 @@ export default function Sidebar() {
     window.location.reload();
   };
   const handleItemClick = (key) => {
-    // Store the active state in localStorage
+   
     localStorage.setItem("activeKey", key);
     setIsActive(key);
   };
@@ -50,7 +50,7 @@ export default function Sidebar() {
       navChild: [
         {
           icon: Inventory2Rounded,
-          title: "Tổng quát",
+          title: "Tổng quan",
           link: "boss/package",
           key: 1,
         },
@@ -90,12 +90,7 @@ export default function Sidebar() {
           link: "/pointLeader/packageSending",
           key: 2,
         },
-        // {
-        //   icon: Storefront,
-        //   title: "Thống kê hàng gửi đến",
-        //   link: "/pointLeader/packageReceivering",
-        //   key: 3,
-        // },
+       
       ],
     },
     {
@@ -126,12 +121,7 @@ export default function Sidebar() {
           link: "/pointStaff/refund",
           key: 4,
         },
-        // {
-        //   icon: WorkOutline,
-        //   title: "Đơn giao thành công",
-        //   link: "/pointStaff/success",
-        //   key: 5,
-        // }
+        
       ],
     },
     {
@@ -144,12 +134,7 @@ export default function Sidebar() {
           link: "/warehouseLeader/account",
           key: 1,
         },
-        // {
-        //   icon: Inventory2Rounded,
-        //   title: "Hàng gửi tới kho",
-        //   link: "/warehouseLeader/packageSending",
-        //   key: 2,
-        // },
+       
         {
           icon: Storefront,
           title: "Thống kê hàng hóa",

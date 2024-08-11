@@ -16,26 +16,7 @@ function ShowInfoTransactionPoint(props) {
   };
   console.log(transactionPoint)
 
-  useEffect(() => {
-    const fetchPackages = async () => {
-      try {
-        const response = await apiGetPackagesOfPoint(transactionPoint.id);
-        const data = response?.data.response;
-        const err = response?.data.err;
-        const msg = response?.data.msg;
-        console.log(data)
-        if (err === 0) {
-          setPackages(data);
-        } else {
-          console.log(msg)
-        }
 
-      } catch (error) {
-        console.error('Error fetching packages:', error);
-      }
-    };
-    fetchPackages();
-  }, [transactionPoint]);
 
   useEffect(() => {
     const fetchEmployees = async () => {
@@ -63,26 +44,6 @@ function ShowInfoTransactionPoint(props) {
     fetchEmployees();
   }, [transactionPoint]);
 
-//   useEffect(() => {
-//     const fetchPoints = async () => {
-//       try {
-//         const response = await apiGetPointsOfWarehouse(warehouse.id);
-//         const data = response?.data.response;
-//         const err = response?.data.err;
-//         const msg = response?.data.msg;
-//         console.log(data)
-//         if (err === 0) {
-//           setWarehousePoint(data);
-//         } else {
-//           console.log(msg)
-//         }
-
-//       } catch (error) {
-//         console.error('Error fetching packages:', error);
-//       }
-//     };
-//     fetchPoints();
-//   }, []);
 
 
 
@@ -92,8 +53,7 @@ function ShowInfoTransactionPoint(props) {
         <Tabs activeKey={activeTab} onSelect={handleTabSelect}>
           <Tab eventKey="tab1" title="Trưởng điểm">
           </Tab>
-          <Tab eventKey="tab2" title="Đơn hàng">
-          </Tab>
+        
           <Tab eventKey="tab3" title="Nhân viên">
           </Tab>
         </Tabs>
@@ -110,7 +70,7 @@ function ShowInfoTransactionPoint(props) {
                       <strong>Mã nhân viên:</strong>
                     </label>
                     <p>
-                      {transactionPoint?.pointLeader?.id}
+                      {transactionPoint?.pointLeader?.user_id}
                     </p>
                   </div>
                   <div style={{ display: 'flex', gap: '10px' }}>
@@ -131,10 +91,10 @@ function ShowInfoTransactionPoint(props) {
                   </div>
                   <div style={{ display: 'flex', gap: '10px' }}>
                     <label>
-                      <strong>Địa chỉ:</strong>
+                      <strong>Email:</strong>
                     </label>
                     <p>
-                      {transactionPoint?.pointLeader?.address}
+                      {transactionPoint?.pointLeader?.email}
                     </p>
                   </div>
                 </div>
@@ -143,67 +103,7 @@ function ShowInfoTransactionPoint(props) {
             )}
           </div>
         }
-        {activeTab === 'tab2' &&
-          <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
-            <ul>
-              {packages.map((packageItem, index) => (
-                <li key={index}>
-                  <div>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <label>
-                        <strong>Mã đơn hàng: </strong>
-                      </label>
-                      <p>
-                        {packageItem?.packageCode}
-                      </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <label>
-                        <strong>Tên người gửi: </strong>
-                      </label>
-                      <p>
-                        {packageItem?.sender?.name}
-                      </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <label>
-                        <strong>Tên người nhận: </strong>
-                      </label>
-                      <p>
-                        {packageItem?.receiver?.name}
-                      </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <label>
-                        <strong>Tên đơn hàng: </strong>
-                      </label>
-                      <p>
-                        {packageItem?.name}
-                      </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <label>
-                        <strong>Phí vận chuyển:</strong>
-                      </label>
-                      <p>
-                        {packageItem?.shippingCost}
-                      </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <label>
-                        <strong>Trạng thái:</strong>
-                      </label>
-                      <p>
-                        {packageItem?.Status?.nameOfStatus}
-                      </p>
-                    </div>
-                    <hr></hr>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        }
+     
         {activeTab === 'tab3' &&
           <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
             <ul>
@@ -216,7 +116,7 @@ function ShowInfoTransactionPoint(props) {
                           <strong>Mã nhân viên:</strong>
                         </label>
                         <p>
-                          {item?.id}
+                          {item?.user_id}
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px' }}>
@@ -237,10 +137,10 @@ function ShowInfoTransactionPoint(props) {
                       </div>
                       <div style={{ display: 'flex', gap: '10px' }}>
                         <label>
-                          <strong>Địa chỉ:</strong>
+                          <strong>Email:</strong>
                         </label>
                         <p>
-                          {item?.address}
+                          {item?.email}
                         </p>
                       </div>
                     </div>

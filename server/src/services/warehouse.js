@@ -30,7 +30,7 @@ exports.getAllService = () => new Promise(async(resolve, reject) => {
               {
                 model: db.Accounts,
                 as: 'warehouseLeader',
-                attributes: ['id', 'name', 'phone', 'address'],
+                attributes: ['user_id', 'name', 'phone','email'],
                 required: false,
               }
             ]

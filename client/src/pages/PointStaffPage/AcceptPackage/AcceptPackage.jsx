@@ -261,7 +261,7 @@ function AcceptPackage() {
         onClick={handleClose}
       />
       <div className="container mt-4">
-        <h2>Tạo đơn hàng mới</h2>
+        <h2>Ghi nhận đơn hàng</h2>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           {/* Sender Information */}
           <Row className="mb-3">
@@ -504,7 +504,7 @@ function AcceptPackage() {
           <Row>
             <div className="text-center mt-3">
               <Button variant="secondary" onClick={handleSubmit} id="input-submit">
-                Tạo mới
+                Thêm
               </Button>
             </div>
           </Row>
@@ -598,48 +598,7 @@ function AcceptPackage() {
                         <p className="pLabel">Ghi chú: </p>
                         <p>{note}</p>
                       </div>
-                      {/* <div className="flex5">
-                        <p className="pLabel">Điểm gửi hàng: </p>
-                        <p>{formData.transactionPointStart.name}</p>
-                      </div>
-                      <div className="flex5">
-                        <p className="pLabel">Điểm nhận hàng: </p>
-                        <p>
-                          {formData.transactionPointEnd
-                            ? formData.transactionPointEnd.name
-                            : null}
-                        </p>
-                      </div> */}
-                      {/* <div className="flex5">
-                        <p className="pLabel">Thông tin vận chuyển: </p>
-                        <br />
-                        <ul>
-                          {statusPackage &&
-                            statusPackage.map((item, i) => (
-                              <li key={i}>
-                                <p
-                                  className={
-                                    i === statusPackage.length - 1 ? 'pStatus' : ''
-                                  }
-                                >
-                                  {item[1]}
-                                </p>
-                              </li>
-                            ))}
-                        </ul>
-                      </div> */}
-                      {/* <div className="flex5">
-                        <p className="pLabel">Chữ ký người gửi: </p>
-                        <div style={{ marginLeft: '150px' }}>
-                          <p>Mã QR đơn: </p>
-                        </div>
-                      </div> */}
-                      {/* <div className="flex5" style={{ display: 'flex', alignItems: 'center' }}>
-                        <p className="pLabel">Chữ ký người nhận: </p>
-                        <div style={{ marginLeft: '150px', marginBottom: '30px' }}>
-                          <QRCode value={formData.name} size={50} />
-                        </div>
-                      </div> */}
+                     
                     </div>
                   </div>
                 </div>

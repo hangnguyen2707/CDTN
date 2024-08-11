@@ -135,7 +135,7 @@ exports.getEmployees = (positionId, type) => new Promise(async(resolve, reject) 
                     where: {
                       '$Employee.warehouseId$': positionId,
                     },
-                    attributes: ['id','name','email', 'phone', 'address', 'accountType'],
+                    attributes: ['user_id','name','email', 'phone', 'address', 'accountType'],
             include: [
             {
                 model: db.Warehouse,
@@ -172,7 +172,7 @@ exports.getEmployees = (positionId, type) => new Promise(async(resolve, reject) 
                     where: {
                       '$Employee.transactionPointId$': positionId,
                     },
-                    attributes: ['id','name', 'phone', 'address', 'accountType'],
+                    attributes: ['user_id','name', 'phone', 'email', 'accountType'],
             include: [
             {
                 model: db.Warehouse,

@@ -39,8 +39,6 @@ function HeaderRole ({ btnText, onClick }) {
     useEffect(() => {
       dispatch(actions.getAllWarehouses());
     }, []);
-    console.log(warehouses);
-    console.log(localStorage);
     useEffect(() => {
       const selectedWarehouse = warehouses.find(
         (warehouse) => warehouse.id == localStorage.getItem("warehouseId")
@@ -121,7 +119,7 @@ function HeaderRole ({ btnText, onClick }) {
                                         }}
                                         variant="h6"
                                     >
-                                        TRƯỞNG ĐIỂM 
+                                        TRƯỞNG ĐIỂM BƯU CỤC BƯU CỤC 
                                     </Typography>
                                 )}
                                 {userRole === 'WAREHOUSE_LEADER' && (

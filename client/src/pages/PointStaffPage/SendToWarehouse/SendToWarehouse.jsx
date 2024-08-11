@@ -78,11 +78,11 @@ function PointStaffSendToWarehouse() {
 
       [order.Status.dateReceiverReturn, 'Người nhận trả lại hàng lúc ' + formatDateTime(order.Status.dateReceiverReturn)],
 
-      [order.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm giao dịch ' + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendPackage)],
+      [order.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm bưu cục ' + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendPackage)],
 
       [order.Status.dateSendToPointEnd,
       order.transactionPointEnd && order.transactionPointEnd?.name ?
-        "Đơn hàng chuyển tới điểm giao dịch " + order.transactionPointEnd?.name + " lúc " + formatDateTime(order.Status.dateSendToPointEnd) : null],
+        "Đơn hàng chuyển tới điểm bưu cục " + order.transactionPointEnd?.name + " lúc " + formatDateTime(order.Status.dateSendToPointEnd) : null],
 
       [order.Status.dateSendToReceiver, "Đơn hàng đã chuyển tới người nhận lúc " + formatDateTime(order.Status.dateSendToReceiver)],
 
@@ -90,7 +90,7 @@ function PointStaffSendToWarehouse() {
         "Đơn hàng rời khỏi kho " + order.warehouseStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseEnd) : null],
 
       [order.Status.dateSendToWarehouseStart, order.warehouseStart && order.warehouseStart?.name ?
-        "Đơn hàng rời khỏi điểm giao dịch " + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseStart) : null],
+        "Đơn hàng rời khỏi điểm bưu cục " + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseStart) : null],
 
       [order.Status.dateWarehouseEndReceived, order.warehouseEnd && order.warehouseEnd?.name ?
         "Đơn hàng nhập kho " + order.warehouseEnd?.name + " lúc " + formatDateTime(order.Status.dateWarehouseEndReceived) : null],
@@ -205,7 +205,7 @@ function PointStaffSendToWarehouse() {
         <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab2Click}>Đơn gửi người nhận</Button>
       </div>
         <div className="dashboard-content-header">
-        {/* <Button style={{ backgroundColor: 'gray', color: 'white' }}onClick={handleOpenModal}>Ghi nhận đơn hàng</Button> */}
+       
           <h2>Các đơn đang chờ gửi đến kho</h2>
           <div className="dashboard-content-search">
             <input
@@ -224,8 +224,6 @@ function PointStaffSendToWarehouse() {
             <th>TRẠNG THÁI</th>
             <th>ĐIỂM KẾ TIẾP</th>
             <th>CƯỚC PHÍ</th>
-            {/* <th>LOẠI HÀNG HÓA</th>
-            <th>CHÚ THÍCH</th> */}
             <th>CẬP NHẬT LẦN CUỐI</th>
           </thead>
 
@@ -271,14 +269,9 @@ function PointStaffSendToWarehouse() {
                   <td>
                     <span>{order.shippingCost}</span>
                   </td>
-                  {/* <td>
-                    <span>{order.type}</span>
-                  </td>
+                  
                   <td>
-                    <span>{order.note}</span>
-                  </td> */}
-                  <td>
-                    <span>2024-07-19T14:40:22.000Z</span>
+                    <span>2024-08-14T14:40:22.000Z</span>
                   </td>
                   <li class="list-inline-item">
                     <button
@@ -286,7 +279,7 @@ function PointStaffSendToWarehouse() {
                       type="button"
                       data-toggle="tooltip"
                       data-placement="top"
-                      title="Update"
+                      title="Edit"
                       onClick={() => handleOpenUpdate1Modal(order)}
                     >
                       <i class="fa fa-edit"></i>
@@ -304,18 +297,7 @@ function PointStaffSendToWarehouse() {
                       <i class="fa fa-truck"></i>
                     </button>
                   </li>
-                  <li className="list-inline-item">
-                    <button
-                      className="btn btn-secondary btn-sm rounded-0"
-                      type="button"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Print"
-                      onClick={() => handleOpenPrintModal(order)}
-                    >
-                      <i className="fa fa-print"></i>
-                    </button>
-                  </li>
+                  
                 </tr>
               ))}
             </tbody>

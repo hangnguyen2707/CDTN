@@ -135,11 +135,11 @@ function PointLeaderPackageReceivering() {
 
       [order.Status.dateReceiverReturn, 'Người nhận trả lại hàng lúc ' + formatDateTime(order.Status.dateReceiverReturn)],
 
-      [order.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm giao dịch ' + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendPackage)],
+      [order.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm bưu cục ' + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendPackage)],
 
       [order.Status.dateSendToPointEnd,
       order.transactionPointEnd && order.transactionPointEnd?.name ?
-        "Đơn hàng chuyển tới điểm giao dịch " + order.transactionPointEnd?.name + " lúc " + formatDateTime(order.Status.dateSendToPointEnd) : null],
+        "Đơn hàng chuyển tới điểm bưu cục " + order.transactionPointEnd?.name + " lúc " + formatDateTime(order.Status.dateSendToPointEnd) : null],
 
       [order.Status.dateSendToReceiver, "Đơn hàng đã chuyển tới người nhận lúc " + formatDateTime(order.Status.dateSendToReceiver)],
 
@@ -147,7 +147,7 @@ function PointLeaderPackageReceivering() {
         "Đơn hàng rời khỏi kho " + order.warehouseStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseEnd) : null],
 
       [order.Status.dateSendToWarehouseStart, order.warehouseStart && order.warehouseStart?.name ?
-        "Đơn hàng rời khỏi điểm giao dịch " + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseStart) : null],
+        "Đơn hàng rời khỏi điểm bưu cục " + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseStart) : null],
 
       [order.Status.dateWarehouseEndReceived, order.warehouseEnd && order.warehouseEnd?.name ?
         "Đơn hàng nhập kho " + order.warehouseEnd?.name + " lúc " + formatDateTime(order.Status.dateWarehouseEndReceived) : null],
@@ -231,7 +231,6 @@ function PointLeaderPackageReceivering() {
   return (
     <div className="dashboard-content">
     <HeaderRoleNoButton
-    btnText={"Thêm đơn hàng"}
     variant="primary"
     onClick={handleOpenModal}
   />
@@ -241,7 +240,7 @@ function PointLeaderPackageReceivering() {
         <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab2Click}>Thống kê hàng gửi đến</Button>
       </div>
         <div className="dashboard-content-header">
-          <h2>Các đơn hàng nhận tại điểm {transactionPointName}</h2>
+          <h2>Các đơn hàng </h2>
           <div className="dashboard-content-search">
             <input
               type="text"
@@ -305,7 +304,7 @@ function PointLeaderPackageReceivering() {
                     <span>{order.shippingCost}</span>
                   </td>
                   <td>
-                    <span>2024-07-19T14:40:22.000Z</span>
+                    <span>2024-08-11T14:40:22.000Z</span>
                   </td>
                   {/*  <td>
         <span>{order.warehouseStart.name}</span>

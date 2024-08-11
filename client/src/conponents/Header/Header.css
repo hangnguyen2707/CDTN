@@ -76,7 +76,7 @@ nav .menuNav {
     font-weight: 600;
     color: white;
     border-right: 4px solid #000;
-    animation: cursor 1s infinite step-end, typing 10s steps(20);
+    /* animation: cursor 1s infinite step-end, typing 10s steps(20); */
     white-space: nowrap;
     overflow: hidden;
 }
@@ -102,11 +102,6 @@ nav .menuNav {
     90%{ width: 0ch;} 
     100%{ width: 0ch;}
 }
-/* 
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-} */
 
 .header-span {
     margin-left: 200px;

@@ -93,12 +93,12 @@ function ShowInfoWarehouse(props) {
         <Tabs activeKey={activeTab} onSelect={handleTabSelect}>
           <Tab eventKey="tab1" title="Trưởng kho">
           </Tab>
-          <Tab eventKey="tab2" title="Điểm giao dịch">
+          <Tab eventKey="tab2" title="Điểm bưu cục">
           </Tab>
-          <Tab eventKey="tab3" title="Đơn hàng">
+          {/* <Tab eventKey="tab3" title="Đơn hàng">
           </Tab>
           <Tab eventKey="tab4" title="Nhân viên">
-          </Tab>
+          </Tab> */}
         </Tabs>
         <CloseIcon onClick={props.onHide}>Đóng</CloseIcon>
       </Modal.Header>
@@ -114,7 +114,7 @@ function ShowInfoWarehouse(props) {
                     </label>
                     <p>
 
-                      {warehouse?.warehouseLeader?.id}
+                      {warehouse?.warehouseLeader?.user_id}
                     </p>
                   </div>
                   <div style={{ display: 'flex', gap: '10px' }}>
@@ -136,11 +136,11 @@ function ShowInfoWarehouse(props) {
                   </div>
                   <div style={{ display: 'flex', gap: '10px' }}>
                     <label>
-                      <strong>Địa chỉ:</strong>
+                      <strong>Email:</strong>
                     </label>
                     <p>
 
-                      {warehouse?.warehouseLeader?.address}
+                      {warehouse?.warehouseLeader?.email}
                     </p>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ function ShowInfoWarehouse(props) {
                   <div>
                     <div style={{ display: 'flex', gap: '10px' }}>
                       <label>
-                        <strong>Tên điểm giao dịch:</strong>
+                        <strong>Tên điểm bưu cục:</strong>
                       </label>
                       <p>
                         {item?.name}
@@ -165,7 +165,7 @@ function ShowInfoWarehouse(props) {
                     </div>
                     <div style={{ display: 'flex', gap: '10px' }}>
                       <label>
-                        <strong>Tên trưởng kho:</strong>
+                        <strong>Tên trưởng điểm:</strong>
                       </label>
                       <p>
                         {item?.pointLeader?.name}
@@ -173,7 +173,7 @@ function ShowInfoWarehouse(props) {
                     </div>
                     <div style={{ display: 'flex', gap: '10px' }}>
                       <label>
-                        <strong>Số điện thoại trưởng kho:</strong>
+                        <strong>Số điện thoại trưởng điểm:</strong>
                       </label>
                       <p>
 

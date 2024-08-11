@@ -32,10 +32,7 @@ const UpdateReceiveFromWarehouse = ({ showModal, handleClose, selectedPackage })
         <Modal.Title>Nhận đơn hàng từ kho</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>Xác nhận đơn hàng nhập điểm giao dịch:</p>
-        <p>ID: {selectedPackage?.id}</p>
-        <p>Ngưởi gửi: {selectedPackage?.sender.name}</p>
-        <p>Người nhận: {selectedPackage?.receiver.name}</p>
+        <p>Xác nhận đơn hàng nhập điểm bưu cục</p>
         <p>Kho chuyển tới: {selectedPackage?.warehouseStart.name}</p>
       </Modal.Body>
       <Modal.Footer>

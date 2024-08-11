@@ -61,21 +61,20 @@ console.log(filteredTransactions)
       keyboard={false}
     >
       <Modal.Header closeButton>
-        <Modal.Title>Chuyển đơn hàng đến điểm giao dịch kế tiếp</Modal.Title>
+        <Modal.Title>Chuyển đơn hàng đến điểm bưu cục kế tiếp</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           <p>ID: {selectedPackage?.id}</p>
-          <p>Người gửi: {selectedPackage?.sender.name}</p>
-          <p>Người nhận: {selectedPackage?.receiver.name}</p>
+         
           <Form.Group controlId="selectedWarehouse">
-            <Form.Label>Điểm giao dịch kế tiếp:</Form.Label>
+            <Form.Label>Điểm bưu cục kế tiếp:</Form.Label>
            <Form.Control
               as="select"
               value={selectedTransactionPoint}
               onChange={(e) => setSelectedTransactionPoint(e.target.value)}
             >
-              <option value="">Chọn điểm giao dịch</option>
+              <option value="">Chọn điểm bưu cục</option>
               {transactions.map((transaction) => (
                 <option key={transaction.id} value={transaction.name}>
                   {transaction.name}

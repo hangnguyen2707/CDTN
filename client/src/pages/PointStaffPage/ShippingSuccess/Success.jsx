@@ -126,9 +126,7 @@ function Success() {
   return (
     <div className="dashboard-content">
     <HeaderRoleNoButton
-    btnText={"Thêm đơn hàng"}
     variant="primary"
-    onClick={handleOpenModal}
   />
       <div className="dashboard-content-container">
       <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', marginTop: '20px' }}>
@@ -200,7 +198,7 @@ function Success() {
                     <span>{order.shippingCost}</span>
                   </td>
                   <td>
-                    <span>2024-07-19T14:40:22.000Z</span>
+                    <span>2024-08-14T14:40:22.000Z</span>
                   </td>
                   <li class="list-inline-item">
                     <button

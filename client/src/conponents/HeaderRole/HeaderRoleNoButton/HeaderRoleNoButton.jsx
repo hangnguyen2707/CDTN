@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import './HeaderRoleNoButton.css';
-import NotificationIcon from '../../../assets/icons/notification.svg';
-import SettingsIcon from '../../../assets/icons/settings.svg';
 import { useState } from 'react';
 import { Avatar, Box, Button, Typography } from '@mui/material';
 import Tippy from '@tippyjs/react/headless';
@@ -9,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import * as actions from '../../../store/actions'
 
-function HeaderRoleNoButton ({ btnText, onClick }) {
+function HeaderRoleNoButton () {
     const [visible, setVisible] = useState(false);
     const show = () => setVisible(true);
     const hide = () => setVisible(false);
@@ -109,7 +107,7 @@ function HeaderRoleNoButton ({ btnText, onClick }) {
                                         }}
                                         variant="h6"
                                     >
-                                        TRƯỞNG ĐIỂM 
+                                        TRƯỞNG ĐIỂM BƯU CỤC BƯU CỤC
                                     </Typography>
                                 )}
                                 {userRole === 'WAREHOUSE_LEADER' && (

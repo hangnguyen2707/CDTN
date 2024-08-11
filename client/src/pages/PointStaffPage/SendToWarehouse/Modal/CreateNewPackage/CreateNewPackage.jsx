@@ -225,7 +225,7 @@ function CreateNewPackageModal(props) {
       >
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-            Tạo đơn hàng mới
+            Ghi nhận đơn hàng
           </Modal.Title>
           <CloseIcon onClick={handleClose}>Đóng</CloseIcon>
         </Modal.Header>
@@ -435,7 +435,7 @@ function CreateNewPackageModal(props) {
             <Row>
               <div className="text-center mt-3">
                 <Button variant="secondary" onClick={handleSubmit} id="input-submit">
-                  Tạo mới
+                  Thêm
                 </Button>
                 <Button variant="secondary" onClick={handleClose}>
                   Đóng
@@ -525,36 +525,7 @@ function CreateNewPackageModal(props) {
                         <p className="pLabel">Giá vận chuyển: </p>
                         <p>{shippingCost}</p>
                       </div>
-                      {/* <div className="flex5">
-                        <p className="pLabel">Điểm gửi hàng: </p>
-                        <p>{formData.transactionPointStart.name}</p>
-                      </div>
-                      <div className="flex5">
-                        <p className="pLabel">Điểm nhận hàng: </p>
-                        <p>
-                          {formData.transactionPointEnd
-                            ? formData.transactionPointEnd.name
-                            : null}
-                        </p>
-                      </div> */}
-                      {/* <div className="flex5">
-                        <p className="pLabel">Thông tin vận chuyển: </p>
-                        <br />
-                        <ul>
-                          {statusPackage &&
-                            statusPackage.map((item, i) => (
-                              <li key={i}>
-                                <p
-                                  className={
-                                    i === statusPackage.length - 1 ? 'pStatus' : ''
-                                  }
-                                >
-                                  {item[1]}
-                                </p>
-                              </li>
-                            ))}
-                        </ul>
-                      </div> */}
+                    
                       <div className="flex5">
                         <p className="pLabel">Chữ ký người gửi: </p>
                         <div style={{ marginLeft: '150px' }}>
@@ -563,9 +534,7 @@ function CreateNewPackageModal(props) {
                       </div>
                       <div className="flex5" style={{ display: 'flex', alignItems: 'center' }}>
                         <p className="pLabel">Chữ ký người nhận: </p>
-                        {/* <div style={{ marginLeft: '150px', marginBottom: '30px' }}>
-                          <QRCode value={formData.name} size={50} />
-                        </div> */}
+                       
                       </div>
 
                     </div>

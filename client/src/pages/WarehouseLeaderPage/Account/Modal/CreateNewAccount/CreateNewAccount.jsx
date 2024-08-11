@@ -235,7 +235,7 @@ function CreateNewAccountModal(props) {
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" id="input-submit" type="submit">
-                Tạo mới
+                Thêm
               </Button>
               <Button variant="secondary" onClick={handleHide}>
                 Đóng

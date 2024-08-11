@@ -140,11 +140,11 @@ function WarehouseLeaderPackageSending() {
 
       [order.Status.dateReceiverReturn, 'Người nhận trả lại hàng lúc ' + formatDateTime(order.Status.dateReceiverReturn)],
 
-      [order.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm giao dịch ' + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendPackage)],
+      [order.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm bưu cục ' + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendPackage)],
 
       [order.Status.dateSendToPointEnd,
       order.transactionPointEnd && order.transactionPointEnd?.name ?
-        "Đơn hàng chuyển tới điểm giao dịch " + order.transactionPointEnd?.name + " lúc " + formatDateTime(order.Status.dateSendToPointEnd) : null],
+        "Đơn hàng chuyển tới điểm bưu cục " + order.transactionPointEnd?.name + " lúc " + formatDateTime(order.Status.dateSendToPointEnd) : null],
 
       [order.Status.dateSendToReceiver, "Đơn hàng đã chuyển tới người nhận lúc " + formatDateTime(order.Status.dateSendToReceiver)],
 
@@ -152,7 +152,7 @@ function WarehouseLeaderPackageSending() {
         "Đơn hàng rời khỏi kho " + order.warehouseStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseEnd) : null],
 
       [order.Status.dateSendToWarehouseStart, order.warehouseStart && order.warehouseStart?.name ?
-        "Đơn hàng rời khỏi điểm giao dịch " + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseStart) : null],
+        "Đơn hàng rời khỏi điểm bưu cục " + order.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseStart) : null],
 
       [order.Status.dateWarehouseEndReceived, order.warehouseEnd && order.warehouseEnd?.name ?
         "Đơn hàng nhập kho " + order.warehouseEnd?.name + " lúc " + formatDateTime(order.Status.dateWarehouseEndReceived) : null],
@@ -216,17 +216,16 @@ function WarehouseLeaderPackageSending() {
   return (
     <div className="dashboard-content">
     <HeaderRoleNoButton
-    btnText={"Thêm đơn hàng"}
     variant="primary"
     onClick={handleOpenModal}
   />
       <div className="dashboard-content-container">
       <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', marginTop: '20px' }}>
-        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab1Click}>Hàng gửi tới điểm bưu cục</Button>
-        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab2Click}>hàng gửi tới kho</Button>
+        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab1Click}>Chuyến tới điểm bưu cục</Button>
+        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab2Click}>Chuyến tới kho kế tiếp</Button>
       </div>
         <div className="dashboard-content-header">
-          <h2>Các đơn hàng chuyển đi tại kho {warehouseName}</h2>
+          <h2>Các đơn hàng chuyển</h2>
           <div className="dashboard-content-search">
             <input
               type="text"
@@ -290,7 +289,7 @@ function WarehouseLeaderPackageSending() {
                     <span>{order.shippingCost}</span>
                   </td>
                   <td>
-                    <span>2024-07-19T14:40:22.000Z</span>
+                    <span>2024-08-14T14:40:22.000Z</span>
                   </td>
                   {/*  <td>
         <span>{order.warehouseStart.name}</span>

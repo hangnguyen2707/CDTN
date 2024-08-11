@@ -1,4 +1,3 @@
-import tem from '../../../assets/images/tem.png'
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,8 +10,7 @@ const PackageForm = () => {
         navigate('*')
     }
 
-    // console.log(statusPackage);
-    // console.log(packageItem)
+  
     return (
         <div className='packageForm'>
             <div className='headerPackage'>

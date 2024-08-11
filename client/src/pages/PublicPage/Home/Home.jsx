@@ -57,16 +57,16 @@ export const Home = () => {
   
         [foundPackage.Status.dateReceiverReturn, 'Người nhận trả lại hàng lúc ' + formatDateTime(foundPackage.Status.dateReceiverReturn)],
   
-        [foundPackage.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm giao dịch ' + foundPackage?.transactionPointStart?.name + " lúc " + formatDateTime(foundPackage.Status.dateSendPackage)],
+        [foundPackage.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm bưu cục ' + foundPackage?.transactionPointStart?.name + " lúc " + formatDateTime(foundPackage.Status.dateSendPackage)],
   
-        [foundPackage.Status.dateSendToPointEnd, "Đơn hàng chuyển tới điểm giao dịch " + foundPackage?.transactionPointEnd?.name + " lúc " + formatDateTime(foundPackage.Status.dateSendToPointEnd)],
+        [foundPackage.Status.dateSendToPointEnd, "Đơn hàng chuyển tới điểm bưu cục " + foundPackage?.transactionPointEnd?.name + " lúc " + formatDateTime(foundPackage.Status.dateSendToPointEnd)],
   
         [foundPackage.Status.dateSendToReceiver, "Đơn hàng đã chuyển tới người nhận lúc " + formatDateTime(foundPackage.Status.dateSendToReceiver)],
   
         [foundPackage.Status.dateSendToWarehouseEnd, "Đơn hàng rời khỏi kho " + foundPackage?.warehouseStart?.name + " lúc " + formatDateTime(foundPackage?.Status?.dateSendToWarehouseEnd)],
   
         [foundPackage.Status.dateSendToWarehouseStart,
-          "Đơn hàng rời khỏi điểm giao dịch " + foundPackage?.transactionPointStart?.name + " lúc " + formatDateTime(foundPackage.Status.dateSendToWarehouseStart)],
+          "Đơn hàng rời khỏi điểm bưu cục " + foundPackage?.transactionPointStart?.name + " lúc " + formatDateTime(foundPackage.Status.dateSendToWarehouseStart)],
   
         [foundPackage.Status.dateWarehouseEndReceived,
           "Đơn hàng nhập kho " + foundPackage?.warehouseEnd?.name + " lúc " + formatDateTime(foundPackage.Status.dateWarehouseEndReceived)],
@@ -87,17 +87,7 @@ export const Home = () => {
 
   return (
     <div id="home">
-      <div className="flexSearch">
-        <input type="text"
-          id="searchInformation-input"
-          placeholder='Nhập mã đơn hàng...'
-          value={packageID}
-          onChange={(e) => setPackageID(e.target.value)}>
-        </input>
-        <button id="btnSubmit" onClick={handleSearch}>
-          Xác nhận
-        </button>
-      </div>
+   
     </div>
   )
 }

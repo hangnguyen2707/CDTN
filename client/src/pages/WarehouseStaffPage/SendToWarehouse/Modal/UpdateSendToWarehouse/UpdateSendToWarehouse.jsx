@@ -53,10 +53,7 @@ const UpdateSendToWarehouse = ({ showModal, handleClose, selectedPackage }) => {
         <Modal.Title>Chuyển đơn hàng đến kho kế tiếp</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={handleSubmit}>
-          <p>ID: {selectedPackage?.id}</p>
-          <p>Người gửi: {selectedPackage?.sender.name}</p>
-          <p>Người nhận: {selectedPackage?.receiver.name}</p>
+        <Form onSubmit={handleSubmit}>  
           <Form.Group controlId="selectedWarehouse">
             <Form.Label>Kho kế tiếp:</Form.Label>
            <Form.Control

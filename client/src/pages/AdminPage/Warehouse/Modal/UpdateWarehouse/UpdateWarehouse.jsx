@@ -156,23 +156,7 @@ function UpdateWarehouseModal(props) {
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
-            {/* <Form.Group as={Col} md="5" controlId="warehouseLeader">
-              <Form.Label>Trưởng kho hàng</Form.Label>
-
-              <Form.Control
-                as="select"
-                value={formData.leaderId}
-                onChange={(e) => setFormData({ ...formData, leaderId: String(e.target.value)  })}
-              >
-                <option value="">Chọn trưởng kho</option>
-                {leaders.map((item) => (
-                  <option key={item?.id} value={item?.id} >
-                    {item?.name}
-
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group> */}
+           
           </Row>
           <Row>
           <Form.Group as={Col} controlId="description">
@@ -202,7 +186,7 @@ function UpdateWarehouseModal(props) {
                 id="input-submit"
                 onClick={handleSubmit}
               >
-                Cập nhật
+                Lưu
               </Button>
               <Button variant="secondary" onClick={handleHide}>
                 Đóng

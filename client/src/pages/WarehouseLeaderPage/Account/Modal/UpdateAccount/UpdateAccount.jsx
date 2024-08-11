@@ -63,7 +63,7 @@ function UpdateAccountModal(props) {
       setValidated(true);
     } else {
       if (formData.phone[0] !== '0' || !(formData.phone.match('[0-9]{10}'))) {
-        window.alert("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại.");
+        window.alert("Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.");
         return;
       }
       console.log(formData)
@@ -176,20 +176,11 @@ function UpdateAccountModal(props) {
               />
             </Form.Group>
           </Row>
-          {/* <Row className="mb-3">
-            <Form.Group as={Col} controlId="address">
-              <Form.Label>Địa chỉ</Form.Label>
-              <Form.Control
-                type="text"
-                value={formData.address}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-          </Row> */}
+         
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" type="submit" id="input-submit">
-                Cập nhật
+                Lưu
               </Button>
               <Button variant="secondary" onClick={handleHide}>
                 Đóng

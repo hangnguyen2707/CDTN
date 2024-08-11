@@ -104,7 +104,7 @@ function UpdateTransactionPoint(props) {
           description: formData.description
         }
         apiUpdatePointById(payload)
-        window.alert("Cập nhật điểm giao dịch thành công")
+        window.alert("Cập nhật điểm bưu cục thành công")
         window.location.reload()
       }
 
@@ -134,7 +134,7 @@ function UpdateTransactionPoint(props) {
     >
       <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
-          Cập nhật điểm giao dịch
+          Cập nhật điểm bưu cục
         </Modal.Title>
         <CloseIcon onClick={handleHide}>Đóng</CloseIcon>
       </Modal.Header>
@@ -142,7 +142,7 @@ function UpdateTransactionPoint(props) {
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="name">
-              <Form.Label>Tên điểm giao dịch</Form.Label>
+              <Form.Label>Tên điểm bưu cục</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Nhập tên kho hàng"
@@ -150,13 +150,13 @@ function UpdateTransactionPoint(props) {
                 onChange={handleInputChange}
               />
               <Form.Control.Feedback type="invalid">
-                Vui lòng nhập tên điểm giao dịch.
+                Vui lòng nhập tên điểm bưu cục.
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row style={{ marginTop: "10px" }} className="mb-3">
             <Form.Group as={Col} controlId="address">
-              <Form.Label>Địa chỉ điểm giao dịch</Form.Label>
+              <Form.Label>Địa chỉ điểm bưu cục</Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -186,13 +186,13 @@ function UpdateTransactionPoint(props) {
           </Row>
           <Row>
           {/* <Form.Group as={Col} md="5" controlId="transactionPointLeader">
-            <Form.Label>Trưởng điểm</Form.Label>
+            <Form.Label>TRƯỞNG ĐIỂM BƯU CỤC</Form.Label>
             <Form.Control
               as="select"
               value={formData.transactionPointLeader}
               onChange={(e) => setTransactionPointLeader(String(e.target.value))}
             >
-              <option>Chọn trưởng điểm</option>
+              <option>Chọn TRƯỞNG ĐIỂM BƯU CỤC</option>
               {leaders.map((item) => (
                 <option key={item.id} value={item?.id}>
                   {item?.name}
@@ -201,7 +201,7 @@ function UpdateTransactionPoint(props) {
             </Form.Control>
           </Form.Group> */}
           <Form.Group as={Col} controlId="description">
-              <Form.Label>Mô tả điểm giao dịch</Form.Label>
+              <Form.Label>Mô tả điểm bưu cục</Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -210,14 +210,14 @@ function UpdateTransactionPoint(props) {
                 onChange={handleInputChange}
               />
               <Form.Control.Feedback type="invalid">
-                Vui lòng nhập mô tả điểm giao dịch
+                Vui lòng nhập mô tả điểm bưu cục
               </Form.Control.Feedback>
             </Form.Group>
             </Row>
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" id="input-submit" onClick={handleSubmit}>
-                Cập nhật
+                Lưu
               </Button>
               <Button variant="secondary" onClick={handleHide}>
                 Đóng

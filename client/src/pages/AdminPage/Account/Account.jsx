@@ -104,24 +104,7 @@ const Account = () => {
     setAccounts(sliceData(users, page, 5));
   }, [page, users]);
 
-  // Search
-  // const handleSearch = (event) => {
-  //   setSearch(event.target.value);
-  //   if (event.target.value !== "") {
-  //     let searchResults = users.filter(
-  //       (item) =>
-  //         item.first_name.toLowerCase().includes(search.toLowerCase()) ||
-  //         item.last_name.toLowerCase().includes(search.toLowerCase()) ||
-  //         item.product.toLowerCase().includes(search.toLowerCase())
-  //     );
-  //     setAccounts(searchResults);
-  //     setPagination(calculateRange(searchResults, 5));
-  //     setPage(1);
-  //   } else {
-  //     setAccounts(sliceData(users, page, 5));
-  //     setPagination(calculateRange(users, 5));
-  //   }
-  // };
+  
 
   const handleSearch = (event) => {
     const searchText = event.target.value.toLowerCase();
@@ -192,9 +175,9 @@ const Account = () => {
           <thead>
             <th>ID</th>
             <th>MÃ NHÂN VIÊN</th>
-            <th>TÊN ĐĂNG NHẬP</th>
+            {/* <th>TÊN ĐĂNG NHẬP</th> */}
             <th>TÊN</th>
-            <th>EMAIL</th>
+            <th >EMAIL</th>
             <th>SỐ ĐIỆN THOẠI</th>
             <th>CHỨC VỤ</th>
             <th>NƠI LÀM VIỆC</th>
@@ -204,18 +187,18 @@ const Account = () => {
               {accounts.map((account, index) => (
                 <tr key={index}>
                   <td>
-                    <span>{account.id}</span>
+                    <span>{index+1}</span>
                   </td>
                   <td>
                     <span>{account.user_id}</span>
                   </td>
-                  <td>
+                  {/* <td>
                     <span>{account.username}</span>
-                  </td>
+                  </td> */}
                   <td>
                     <span>{account.name}</span>
                   </td>
-                  <td>
+                  <td >
                     <span>{account.email}</span>
                   </td>
                   <td>
@@ -223,7 +206,7 @@ const Account = () => {
                   </td>
                   <td>
                     {account.accountType === "POINT_LEADER" ? (
-                      <span>TRƯỞNG ĐIỂM</span>
+                      <span>TRƯỞNG ĐIỂM BƯU CỤC</span>
                     ) : (
                       <span>TRƯỞNG KHO</span>
                     )}
@@ -252,18 +235,7 @@ const Account = () => {
                           <i class="fa fa-edit"></i>
                         </button>
                       </li>
-                      {/* <li class="list-inline-item">
-                        <button
-                          class="btn btn-secondary btn-sm rounded-0"
-                          type="button"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Delete"
-                          // onClick={() => { handleDelete(order.id) }}
-                        >
-                          <i class="fa fa-trash"></i>
-                        </button>
-                      </li> */}
+                      
                     </ul>
                   </td>
                 </tr>

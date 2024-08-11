@@ -123,13 +123,11 @@ function WarehouseStaffSendToWarehouse() {
   return (
     <div className="dashboard-content">
     <HeaderRoleNoButton
-    btnText={"Thêm đơn hàng"}
     variant="primary"
-    onClick={handleOpenModal}
   /> 
       <div className="dashboard-content-container">
       <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', marginTop: '20px' }}>
-        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab1Click}>Đơn chờ gửi tới điểm giao dịch</Button>
+        <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab1Click}>Đơn chờ gửi tới điểm bưu cục</Button>
         <Button style={{ backgroundColor: 'gray', color: 'white' }} onClick={handleTab2Click}>Đơn chờ gửi tới kho</Button>
       </div>
         <div className="dashboard-content-header">
@@ -197,7 +195,7 @@ function WarehouseStaffSendToWarehouse() {
                     <span>{order.shippingCost}</span>
                   </td>
                   <td>
-                    <span>2024-07-19T14:40:22.000Z</span>
+                    <span>2024-08-14T14:40:22.000Z</span>
                   </td>
                   <li class="list-inline-item">
                     <button

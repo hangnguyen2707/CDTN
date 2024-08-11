@@ -132,11 +132,7 @@ td span, td div span {
     color: gray;
     font-weight: 700;
 }
-/* .dashboard-content-icon {
-    margin: 5px !important;
-    width: 20px;
-    margin-right: 10px;
-} */
+
 .dashboard-content-footer{
     margin-left: 400px;
     display: flex;
@@ -196,3 +192,4 @@ td span, td div span {
         padding: 5px; 
     }
 }
+

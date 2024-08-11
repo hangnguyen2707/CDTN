@@ -195,9 +195,8 @@ function TransactionPoint() {
 
         <table>
           <thead>
-            <th>ID</th>
-            {/* <th>TÊN KHO HÀNG</th> */}
-            <th>TÊN TRƯỞNG ĐIỂM</th>
+            <th>STT</th>
+            <th>TÊN TRƯỞNG ĐIỂM BƯU CỤC</th>
             <th>TÊN ĐIỂM</th>
             <th>ĐỊA CHỈ</th>
             <th>MÔ TẢ</th>
@@ -210,9 +209,7 @@ function TransactionPoint() {
                   <td>
                     <span>{transaction.id}</span>
                   </td>
-                  {/* <td>
-                    <span>{transaction.Warehouse?.name}</span>
-                  </td> */}
+
                   <td>
                     <span>{transaction.pointLeader?.name}</span>
                   </td>
@@ -253,9 +250,7 @@ function TransactionPoint() {
                           <i class="fa fa-edit"></i>
                         </button>
                       </li>
-                      {/* <li class="list-inline-item">
-                                                <button class="btn btn-secondary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete" onClick = {(e) =>handleOpenDeleteModal(transaction)} ><i class="fa fa-trash"></i></button>
-                                            </li> */}
+                      
                     </ul>
                   </td>
                 </tr>
@@ -273,11 +268,6 @@ function TransactionPoint() {
           onHide={handleCloseUpdateModal}
           transactionPoint = {selectedTransactionPoint}
         />
-        {/* <DeleteTransactionPointModal
-                        show={isDeleteModalOpen}
-                        onHide={handleCloseDeleteModal}
-                        transaction ={selectedTransactionPoint}
-                /> */}
         {transactions.length !== 0 ? (
           <div className="dashboard-content-footer">
             <span

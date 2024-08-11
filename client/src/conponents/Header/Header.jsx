@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Header.css'
-import { BsSearch } from 'react-icons/bs'
-import Button from '../Button/Button'
+// import { BsSearch } from 'react-icons/bs'
+// import Button from '../Button/Button'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import * as actions from '../../store/actions'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import { getAllPackages } from "../../store/actions/package";
-import tem from '../../assets/images/tem.png'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -111,16 +110,16 @@ const Header = () => {
 
       [order.Status.dateReceiverReturn, 'Người nhận trả lại hàng lúc ' + formatDateTime(order.Status.dateReceiverReturn)],
 
-      [order.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm giao dịch ' + order?.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendPackage)],
+      [order.Status.dateSendPackage, 'Người gửi gửi đơn hàng tại điểm bưu cục ' + order?.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendPackage)],
 
-      [order.Status.dateSendToPointEnd, "Đơn hàng chuyển tới điểm giao dịch " + order?.transactionPointEnd?.name + " lúc " + formatDateTime(order.Status.dateSendToPointEnd)],
+      [order.Status.dateSendToPointEnd, "Đơn hàng chuyển tới điểm bưu cục " + order?.transactionPointEnd?.name + " lúc " + formatDateTime(order.Status.dateSendToPointEnd)],
 
       [order.Status.dateSendToReceiver, "Đơn hàng đã chuyển tới người nhận lúc " + formatDateTime(order.Status.dateSendToReceiver)],
 
       [order.Status.dateSendToWarehouseEnd, "Đơn hàng rời khỏi kho " + order?.warehouseStart?.name + " lúc " + formatDateTime(order?.Status?.dateSendToWarehouseEnd)],
 
       [order.Status.dateSendToWarehouseStart,
-      "Đơn hàng rời khỏi điểm giao dịch " + order?.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseStart)],
+      "Đơn hàng rời khỏi điểm bưu cục " + order?.transactionPointStart?.name + " lúc " + formatDateTime(order.Status.dateSendToWarehouseStart)],
 
       [order.Status.dateWarehouseEndReceived,
       "Đơn hàng nhập kho " + order?.warehouseEnd?.name + " lúc " + formatDateTime(order.Status.dateWarehouseEndReceived)],
@@ -151,22 +150,13 @@ const Header = () => {
               </Link>
             </div>
           </li>
-          {/* <span className='header-span'></span> */}
-          <li>
-            <Link to='/aboutUs'>
-              Giới thiệu
-            </Link>
-          </li>
-          <li>
-            <Link to='/construction'>
-              Hướng dẫn
-            </Link>
-          </li>
+          
+          
           <li>
             <div className="search">
               <input type="text"
                 id="search-input"
-                placeholder='Nhập mã đơn hàng...'
+                placeholder='Tra cứu'
                 value={text}
                 onChange={e => onChangeHandler(e.target.value)}>
               </input>

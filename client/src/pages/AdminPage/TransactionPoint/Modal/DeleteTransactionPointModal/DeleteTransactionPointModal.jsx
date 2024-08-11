@@ -28,7 +28,7 @@ function DeleteTransactionPointModal(props) {
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" className="custom-modal" backdrop="static" size = "sm" >
       <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">Xác nhận xóa điểm giao dịch?</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Xác nhận xóa điểm bưu cục?</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>

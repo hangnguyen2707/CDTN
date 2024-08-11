@@ -42,7 +42,7 @@ const Login = () => {
   const handleSubmit = async () => {
     try {
       if (!payload.phone) {
-        setErrorPhoneMessage('Vui lòng nhập số điện thoại!');
+        setErrorPhoneMessage('Vui lòng nhập tên đăng nhập!');
       } else if (payload.phone[0] !== '0' || !(payload.phone.match('[0-9]{10}'))) {
         setErrorPhoneMessage('Số điện thoại không hợp lệ!');
       } else {
@@ -58,7 +58,7 @@ const Login = () => {
 
       setTimeout(() => {
         if (!window.localStorage.getItem('persist:auth').isLogged ) {
-          setErrorPasswordMessage('Số điện thoại hoặc mật khẩu không chính xác!');
+          setErrorPasswordMessage('');
         } else {
           setErrorPasswordMessage('');
         }
@@ -79,10 +79,10 @@ const Login = () => {
           </div>
           <form>
             <div id="phoneDiv">
-              <label className='label-login'>Số điện thoại</label>
+              <label className='label-login'>Tên đăng nhập</label>
               <input type="text" id='phone'
                 value={payload.phone}
-                placeholder="Số điện thoại"
+                placeholder="Tên đăng nhập"
                 onKeyDown={handleKeyDown}
                 onChange={(e) => setPayload(prev => ({ ...prev, phone: e.target.value }))} />
             </div>
@@ -103,19 +103,14 @@ const Login = () => {
             )}
           </form>
           <br></br>
-          <button className="btnSignIn" onClick={handleSubmit}>Xác nhận</button>
+          <button className="btnSignIn" onClick={handleSubmit}>Đăng nhập</button>
           <br></br>
           
         </div>
       </div>
       <div id="poster">
         <div id="flex2">
-          <h1>Xin chào!</h1>
-          <p>
-            Vui lòng nhập thông tin cá nhân
-            <br></br>
-            để sử dụng website
-          </p>
+          
         </div>
       </div>
     </div>

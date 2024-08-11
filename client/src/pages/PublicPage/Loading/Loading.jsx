@@ -27,26 +27,34 @@ const Loading = () => {
                     localStorage.setItem('role', userData[0].accountType);
                     localStorage.setItem('id', userData[0].id);
                     localStorage.setItem('name', userData[0].name);
+                    console.log(userData[0].accountType)
                     switch(userData[0].accountType){
                         case 'POINT_STAFF':
                         
                             localStorage.setItem('transactionPointId', userData[0].Employee?.TransactionPoint?.id|| '-1')
                             console.log(userData[0].Employee?.TransactionPoint?.Warehouse.id)
                             localStorage.setItem('warehouseId', userData[0].Employee?.TransactionPoint?.Warehouse.id || '-1' )
+                            navigate('pointStaff/acceptPackage')
                             break
                         
                         case 'WAREHOUSE_STAFF':
                             localStorage.setItem('warehouseId', userData[0].Employee?.Warehouse?.id|| '-1')
+                            navigate('/boss/dashboard')
                             break
                         case 'POINT_LEADER':
                             localStorage.setItem('transactionPointId', userData[0].TransactionPoints[0]?.id|| '-1')
+                            navigate('/pointLeader/packageSending')
                             break
                         case 'WAREHOUSE_LEADER':
                             localStorage.setItem('warehouseId', userData[0].Warehouses[0]?.id|| '-1')
+                            navigate('/warehouseLeader/packageReceivering')
                             break
+                        default:
+                            navigate('/boss/dashboard');
+
                     }   
                     
-                    navigate('/boss/dashboard');
+                    
                     window.location.reload();
                 }
                 
@@ -57,12 +65,7 @@ const Loading = () => {
     return(
         <div className='loading'>
               <div className='loadingLogo'>
-                <div className='loadingPost'>
-                  <h1>Bạn có biết?</h1>
-                  <br></br>
-                  <p>Express là đơn vị vận chuyển có số lượng người dùng trong năm 2024 cao nhất Việt Nam</p>
-                </div>
-                <img src={runner} alt="" />
+               
               </div>
               <div className = "loader"></div> 
             </div>

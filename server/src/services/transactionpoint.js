@@ -35,14 +35,14 @@ exports.getAllService = () => new Promise(async(resolve, reject) => {
                 include: [{
                     model: db.Accounts,
                     as: 'warehouseLeader',
-                    attributes: ['id', 'name', 'phone', 'address'],
+                    attributes: ['id', 'name', 'phone', 'email'],
                     required: false,
                 }]
               },
               {
                 model: db.Accounts,
                 as: 'pointLeader',
-                attributes: ['id', 'name', 'phone', 'address'],
+                attributes: ['user_id', 'name', 'phone', 'email'],
                 required: false,
               },
             ]

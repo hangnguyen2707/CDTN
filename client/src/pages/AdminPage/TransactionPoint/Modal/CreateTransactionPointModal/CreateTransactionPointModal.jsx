@@ -131,14 +131,14 @@ function CreateTransactionPointModal(props) {
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" className="custom-modal" backdrop="static">
       <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">Tạo điểm giao dịch mới</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Tạo điểm bưu cục mới</Modal.Title>
         <CloseIcon onClick={handleHide}>Đóng</CloseIcon>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="name">
-              <Form.Label>Tên điểm giao dịch</Form.Label>
+              <Form.Label>Tên điểm bưu cục</Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -147,13 +147,13 @@ function CreateTransactionPointModal(props) {
                 onChange={handleInputChange}
               />
               <Form.Control.Feedback type="invalid">
-                Vui lòng nhập tên điểm giao dịch.
+                Vui lòng nhập tên điểm bưu cục.
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row style={{ marginTop: '10px' }} className="mb-3">
             <Form.Group as={Col} controlId="address">
-              <Form.Label>Địa chỉ điểm giao dịch</Form.Label>
+              <Form.Label>Địa chỉ điểm bưu cục</Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -179,23 +179,23 @@ function CreateTransactionPointModal(props) {
           </Row>
           <Row>
           <Form.Group as={Col} md="12" controlId="description">
-              <Form.Label>Mô tả điểm giao dịch</Form.Label>
+              <Form.Label>Mô tả điểm bưu cục</Form.Label>
               <Form.Control
                 required
                 type="text"
-                placeholder="Nhập mô tả điểm giao dịch"
+                placeholder="Nhập mô tả điểm bưu cục"
                 value={formData?.description}
                 onChange={handleInputChange}
               />
               <Form.Control.Feedback type="invalid">
-                Vui lòng nhập mô tả điểm giao dịch.
+                Vui lòng nhập mô tả điểm bưu cục.
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row style={{ marginTop: '10px' }}>
             <div className="text-center mt-3" style={{ marginTop: '50px' }}>
               <Button variant="secondary" id="input-submit" type = "submit">
-                Tạo mới
+                Thêm
               </Button>
               <Button variant="secondary" onClick={handleHide}>
                 Đóng

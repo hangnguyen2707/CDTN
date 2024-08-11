@@ -5,8 +5,7 @@ import Package from "../pages/AdminPage/Package/Package";
 import Register from "../pages/PublicPage/Register/Register";
 import TransactionPoint from "../pages/AdminPage/TransactionPoint/TransactionPoint";
 import Warehouse from "../pages/AdminPage/Warehouse/Warehouse";
-import Construction from "../pages/PublicPage/Construction/Construction"
-import AboutUs from "../pages/PublicPage/AboutUs//AboutUs"
+
 import PointLeaderAccount from "../pages/PointLeaderPage/Account/PointLeaderAccount";
 import pointStaffSendToWarehouse from "../pages/PointStaffPage/SendToWarehouse/SendToWarehouse";
 import pointStaffReceiveFromWarehouse from "../pages/PointStaffPage/ReceiveFromWarehouse/ReceiveFromWarehouse";
@@ -32,14 +31,7 @@ const publicRoutes = [
       path: '/register',
       page: Register
     },
-    {
-      path: '/construction',
-      page: Construction
-    },
-    {
-      path: '/aboutUs',
-      page: AboutUs
-    },
+    
     {
       path: '/',
       page: Home
