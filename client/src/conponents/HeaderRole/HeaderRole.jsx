@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import './HeaderRole.css';
-import NotificationIcon from '../../assets/icons/notification.svg';
-import SettingsIcon from '../../assets/icons/settings.svg';
 import { useState } from 'react';
 import { Avatar, Box, Button, Typography } from '@mui/material';
 import Tippy from '@tippyjs/react/headless';
@@ -13,9 +11,7 @@ function HeaderRole ({ btnText, onClick }) {
     const [visible, setVisible] = useState(false);
     const show = () => setVisible(true);
     const hide = () => setVisible(false);
-    const dispatch = useDispatch()
-    const { isLogged } = useSelector(state => state.auth)
-    const {userData} = useSelector(state => state.user)
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const { warehouses } = useSelector((state) => state.warehouse);
     const [warehouseName, setWarehouseName] = useState("");
@@ -68,21 +64,10 @@ function HeaderRole ({ btnText, onClick }) {
             {btnText && 
                 <button className='dashboard-header-btn' onClick={onClick}>{btnText}</button>
             }
-
-            {/*
-            <div className='dashboard-header-right'>
-                <img 
-                    src={NotificationIcon}
-                    className='dashboard-header-icon' />
-                <img 
-                    src={SettingsIcon}
-                    alt='settings-icon'
-        className='dashboard-header-icon' /> */}
                     <Tippy
                     interactive
                     visible={visible}
                     onClickOutside={hide}
-                    // placement="bottom-end"
                     placement="bottom"
                     render={(attrs) => (
                     <div className="user__profile" style={ {marginLeft: '2em',backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6))',
@@ -201,7 +186,7 @@ function HeaderRole ({ btnText, onClick }) {
                     <Avatar
                         className="user__avatar"
                         onClick={visible ? hide : show}
-                        src='https://reqres.in/img/faces/7-image.jpg'
+                        src='../../assets/images/avt3.jpg'
                         sx={{ marginRight: '60px' }}
                     />
                 </Tippy>

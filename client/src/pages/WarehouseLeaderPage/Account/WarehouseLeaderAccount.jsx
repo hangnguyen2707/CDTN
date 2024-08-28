@@ -100,9 +100,9 @@ const WarehouseLeaderAccount = () => {
     if (event.target.value !== "") {
       let searchResults = users.filter(
         (item) =>
-          item.first_name.toLowerCase().includes(search.toLowerCase()) ||
-          item.last_name.toLowerCase().includes(search.toLowerCase()) ||
-          item.product.toLowerCase().includes(search.toLowerCase())
+          item.name.toLowerCase().includes(search.toLowerCase()) ||
+          item.email.toLowerCase().includes(search.toLowerCase()) ||
+          item.phone.toLowerCase().includes(search.toLowerCase())
       );
       setAccounts(searchResults);
       setPagination(calculateRange(searchResults, 5));
@@ -136,13 +136,7 @@ const WarehouseLeaderAccount = () => {
     firstPage(page, setPage);
   };
 
-  const handleDelete = (id) => {
-    if(window.confirm("Bạn có chắc chắn muốn xóa tài khoản này không?")) {
-      apiDeleteEmployee(id)
-      window.location.reload()
-    }
-
-  }
+  
 
   return (
     <div className="dashboard-content">
@@ -211,18 +205,7 @@ const WarehouseLeaderAccount = () => {
                           <i class="fa fa-edit"></i>
                         </button>
                       </li>
-                      <li class="list-inline-item">
-                        <button
-                          class="btn btn-secondary btn-sm rounded-0"
-                          type="button"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Delete"
-                          onClick={() => { handleDelete(account.id) }}
-                        >
-                          <i class="fa fa-trash"></i>
-                        </button>
-                      </li>
+                    
                     </ul>
                   </td>
                 </tr>

@@ -8,8 +8,6 @@ import { apiUpdateUserById } from "../../../../../services/user";
 function UpdateAccountModal(props) {
   const dispatch = useDispatch();
   const [validated, setValidated] = useState(false);
-  const { warehouses } = useSelector((state) => state.warehouse);
-  const { transactionPoints } = useSelector((state) => state.transactionPoint);
 
   useEffect(() => {
     dispatch(getAllWarehouses());
@@ -79,13 +77,7 @@ function UpdateAccountModal(props) {
       apiUpdateUserById(payload)
       window.alert("Cập nhật thành công")
       window.location.reload()
-      // props.onHide();
-      // setFormData({
-      //   userName: "",
-      //   phone: "",
-      //   role: "",
-      //   workLocation: "",
-      // });
+     
     }
   };
 
@@ -123,24 +115,7 @@ function UpdateAccountModal(props) {
       </Modal.Header>
       <Modal.Body>
         <Form validated={validated} onSubmit={handleSubmit}>
-        <Row className="mb-3">
-            <Form.Group as={Col} md="6" controlId="user_id">
-              <Form.Label>Mã nhân viên</Form.Label>
-              <Form.Control
-                type="text"
-                value={formData.user_id}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-            <Form.Group as={Col} md="6" controlId="username">
-              <Form.Label>Tên đăng nhập</Form.Label>
-              <Form.Control
-                type="text"
-                value={formData.username}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-          </Row>
+        
           <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="name">
               <Form.Label>Tên nhân viên</Form.Label>
@@ -176,7 +151,17 @@ function UpdateAccountModal(props) {
               />
             </Form.Group>
           </Row>
-         
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="user_id">
+              <Form.Label>Mã nhân viên</Form.Label>
+              <Form.Control
+                type="text"
+                value={formData.user_id}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+           
+          </Row>
           <Row style={{ marginTop: "10px" }}>
             <div className="text-center mt-3" style={{ marginTop: "50px" }}>
               <Button variant="secondary" type="submit" id="input-submit">

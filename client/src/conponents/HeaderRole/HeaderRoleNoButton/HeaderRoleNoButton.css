@@ -21,14 +21,11 @@
     text-transform: uppercase;
     border: 1px solid gray;
     background-color: gray;
-    /* border: 1px solid #015C92;
-    background-color: #015C92; */
+
 }
 .dashboard-header-btn:hover {
     color: gray;
     border: 1px solid gray;
-    /* color: #015C92;
-    border: 1px solid #015C92; */
     background-color: #F0F2F5;
 }
 .dashboard-header-right {

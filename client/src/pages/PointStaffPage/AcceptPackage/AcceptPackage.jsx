@@ -578,10 +578,7 @@ function AcceptPackage() {
                       <p>THÔNG TIN ĐƠN HÀNG</p>
                     </div>
                     <div className="flex4">
-                      {/* <div className="flex5">
-                        <p className="pLabel">Mã đơn hàng: </p>
-                        <p>{formData.name}</p>
-                      </div> */}
+                  
                       <div className="flex5">
                         <p className="pLabel">Tên sản phẩm: </p>
                         <p>{name}</p>

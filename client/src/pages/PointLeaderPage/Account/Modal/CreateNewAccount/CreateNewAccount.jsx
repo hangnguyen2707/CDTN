@@ -107,7 +107,6 @@ function CreateNewAccountModal(props) {
         name: "",
         phone: "",
         email: "",
-        // address: "",
         password: "",
         accountType: "POINT_STAFF",
         positionId: localStorage.getItem('transactionPointId'),

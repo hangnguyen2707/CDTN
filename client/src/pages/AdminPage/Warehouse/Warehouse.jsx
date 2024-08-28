@@ -25,7 +25,6 @@ function Warehouse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-  const [isDelete, setIsDelete] = useState(null);
   const [warehousesAll, setWarehouseAll] = useState(warehouses);
   const [showInfoWarehouse, setShowInfoWarehouse] = useState(false);
   const [selectedWarehouse, setSelectedWarehouse] = useState(null);
@@ -156,7 +155,6 @@ const renderPagination = () => {
             <HeaderRole
                 btnText="Thêm kho hàng" onClick={setIsModalOpen} />
             <CreateNewWarehouseModal
-                // dialogClassName="modal-dialog-custom"
                 show={isModalOpen}
                 onHide={handleCloseModal}
                 warehouses = {warehouses}
@@ -206,9 +204,7 @@ const renderPagination = () => {
                                             <li className="list-inline-item">
                                                 <button className="btn btn-secondary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onClick={(e) => handleOpenUpdateModal(warehouse)}><i class="fa fa-edit"></i></button>
                                             </li>
-                                            {/* <li className="list-inline-item">
-                                                <button className="btn btn-secondary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete" onClick={(e) => handleDeleteModalOpen(warehouse)}><i class="fa fa-trash"></i></button>
-                                            </li> */}
+                                            
                     </ul>
                   </td>
                 </tr>
@@ -225,11 +221,7 @@ const renderPagination = () => {
             onHide={handleCloseUpdateModal}
             selectWarehouse={selectedWarehouse}
           />
-          {/* <DeleteWarehouseModal
-                        show={isDeleteModalOpen}
-                        onHide={handleCloseDeleteModal}
-                        warehouse = {selectedWarehouse}
-                    /> */}
+       
         </table>
 
         {warehousesAll.length !== 0 ? (

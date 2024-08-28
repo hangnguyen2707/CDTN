@@ -9,11 +9,9 @@ import {
   firstPage,
 } from '../../../utils/table-pagination';
 import HeaderRole from '../../../conponents/HeaderRole/HeaderRole';
-import { useDispatch, useSelector } from 'react-redux';
 import CreateNewAccountModal from './Modal/CreateNewAccount/CreateNewAccount';
 import UpdateAccountModal from './Modal/UpdateAccount/UpdateAccount';
 const Account = () => {
-  const dispatch = useDispatch();
   const [users, setUsers] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
   const [accounts, setAccounts] = useState(users);
@@ -147,6 +145,8 @@ const Account = () => {
     firstPage(page, setPage);
   };
 
+
+
   return (
     <div className="dashboard-content">
       <HeaderRole
@@ -192,9 +192,7 @@ const Account = () => {
                   <td>
                     <span>{account.user_id}</span>
                   </td>
-                  {/* <td>
-                    <span>{account.username}</span>
-                  </td> */}
+                
                   <td>
                     <span>{account.name}</span>
                   </td>

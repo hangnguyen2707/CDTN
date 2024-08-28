@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
 import './Login.css'
-import Button from '../../../conponents/Button/Button'
 import * as actions from '../../../store/actions'
 import { useNavigate } from 'react-router-dom'
 import car from '../../../assets/images/car.png'
@@ -43,9 +42,8 @@ const Login = () => {
     try {
       if (!payload.phone) {
         setErrorPhoneMessage('Vui lòng nhập tên đăng nhập!');
-      } else if (payload.phone[0] !== '0' || !(payload.phone.match('[0-9]{10}'))) {
-        setErrorPhoneMessage('Số điện thoại không hợp lệ!');
-      } else {
+      } 
+       else {
         setErrorPhoneMessage('');
       }
       if (!payload.password) {
@@ -53,7 +51,7 @@ const Login = () => {
       } else {
         setErrorPasswordMessage('');
       }
-      if (!payload.phone || !payload.password) return;
+      
       const response = dispatch(actions.login(payload))
 
       setTimeout(() => {
@@ -105,7 +103,7 @@ const Login = () => {
           <br></br>
           <button className="btnSignIn" onClick={handleSubmit}>Đăng nhập</button>
           <br></br>
-          
+            
         </div>
       </div>
       <div id="poster">

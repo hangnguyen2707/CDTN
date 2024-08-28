@@ -69,7 +69,7 @@ table {
 th {
     text-align: left;
     padding: 5px;
-    /* padding: 6px 12px; */
+
     background: transparent;
     box-shadow: none;
     color: gray !important;
@@ -91,7 +91,6 @@ tr, thead {
 td {
     text-align: left;
     padding: 5px;
-    /* padding: 6px 12px; */
     background: transparent;
     box-shadow: none;
     border-bottom: 0.05rem solid rgb(240, 242, 245);
@@ -122,11 +121,7 @@ td span, td div span {
     color: gray;
     font-weight: 700;
 }
-/* .dashboard-content-icon {
-    margin: 5px !important;
-    width: 20px;
-    margin-right: 10px;
-} */
+
 .dashboard-content-footer{
     margin-left: 400px;
     display: flex;

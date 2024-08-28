@@ -31,17 +31,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="item social">
-                      <a href = "https://www.facebook.com/">
-                        <i className="fa fa-facebook icon"></i>
-                      </a>
-                      <a href = "https://www.instagram.com/">
-                        <i className="fa fa-instagram icon"></i>
-                      </a>
-                      <a href = "https://www.youtube.com/">
-                        <i className="fa fa-youtube icon"></i>
-                      </a>
-                </div>
+                
                 <p className="copyright">FUTA Express 2024</p>
             </div>
         </footer>

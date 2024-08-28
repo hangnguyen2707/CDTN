@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { Modal, Tabs, Tab, ModalBody } from 'react-bootstrap';
 import CloseIcon from '@mui/icons-material/Close';
 

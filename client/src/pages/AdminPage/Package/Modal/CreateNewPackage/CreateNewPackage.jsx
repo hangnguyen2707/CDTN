@@ -9,7 +9,6 @@ function CreateNewPackageModal(props) {
   const [receiverProvinces, setReceiverProvinces] = useState([]);
   const [receiverDistricts, setReceiverDistricts] = useState([]);
   const [receiverWards, setReceiverWards] = useState([]);
-
   const [receiverProvince, setReceiverProvince] = useState('');
   const [receiverDistrict, setReceiverDistrict] = useState('');
   const [receiverWard, setReceiverWard] = useState('');

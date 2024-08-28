@@ -189,7 +189,7 @@ function HeaderRoleNoButton () {
                     <Avatar
                         className="user__avatar"
                         onClick={visible ? hide : show}
-                        src='https://reqres.in/img/faces/7-image.jpg'
+                        src='../../assets/images/avt3.jpg'
                         sx={{ marginRight: '60px' }}
                     />
                 </Tippy>

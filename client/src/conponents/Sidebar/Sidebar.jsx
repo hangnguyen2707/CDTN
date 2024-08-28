@@ -1,20 +1,12 @@
 import "./Sidebar.css";
 import {
-  SendToMobile,
   Home,
-  PermIdentity,
   Storefront,
   WorkOutline,
-  Laptop,
-  Warehouse,
-  Settings,
-  BarChart,
-  MenuRounded,
   WarehouseRounded,
   FactoryRounded,
   Inventory2Rounded,
   AccountBalanceRounded,
-  AccountBalanceOutlined,
   AccessAlarmSharp,
 } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
@@ -153,18 +145,7 @@ export default function Sidebar() {
           link: "/warehouseStaff/receiveFromTransaction",
           key: 1,
         },
-        // {
-        //   icon: Home,
-        //   title: "Đơn chờ gửi đến kho",
-        //   link: "/warehouseStaff/sendToWarehouse",
-        //   key: 2,
-        // },
-        // {
-        //   icon: Storefront,
-        //   title: "Đơn chờ nhận từ kho",
-        //   link: "/warehouseStaff/receiveFromWarehouse",
-        //   key: 2,
-        // },
+        
         {
           icon: AccessAlarmSharp,
           title: "Tạo đơn chuyển hàng",
@@ -208,7 +189,6 @@ export default function Sidebar() {
                     >
                       <child.icon className="sidebarIcon" />
                       <h3 className="sidebarText">{child.title}</h3>
-                      {/* {child.title} */}
                     </li>
                   </Link>
                 ))}

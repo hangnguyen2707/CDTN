@@ -4,12 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { apiGetLeaders } from '../../../../../services/user';
 import { apiCreateNewPoint } from '../../../../../services/transactionpoint';
 function CreateTransactionPointModal(props) {
-  const [provinces, setProvinces] = useState([]);
-  const [districts, setDistricts] = useState([]);
-  const [province, setProvince] = useState('');
   const [leaders, setLeaders] = useState([]);
-  const [district, setDistrict] = useState('');
-  const [reset, setReset] = useState(false);
   const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
     name: '',

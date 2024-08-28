@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import './Loading.css'
 import { useSelector, useDispatch } from 'react-redux'
 import * as actions from '../../../store/actions'
-import runner from '../../../assets/images/runner.gif'
 import { useNavigate } from 'react-router-dom'
 
 const Loading = () => {    
@@ -50,7 +49,7 @@ const Loading = () => {
                             navigate('/warehouseLeader/packageReceivering')
                             break
                         default:
-                            navigate('/boss/dashboard');
+                            navigate('/boss/package');
 
                     }   
                     
@@ -64,9 +63,6 @@ const Loading = () => {
     
     return(
         <div className='loading'>
-              <div className='loadingLogo'>
-               
-              </div>
               <div className = "loader"></div> 
             </div>
     )

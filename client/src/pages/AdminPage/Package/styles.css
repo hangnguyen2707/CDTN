@@ -192,4 +192,17 @@ td span, td div span {
         padding: 5px; 
     }
 }
+.selectedText {
+    width: 100%;
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.25;
+    letter-spacing: 0.035em;
+    opacity: 1;
+    text-transform: none;
+    vertical-align: unset;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
 

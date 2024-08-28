@@ -2,7 +2,6 @@ import Account from "../pages/AdminPage/Account/Account";
 import {Home} from "../pages/PublicPage/Home/Home";
 import Login from "../pages/PublicPage/Login/Login";
 import Package from "../pages/AdminPage/Package/Package";
-import Register from "../pages/PublicPage/Register/Register";
 import TransactionPoint from "../pages/AdminPage/TransactionPoint/TransactionPoint";
 import Warehouse from "../pages/AdminPage/Warehouse/Warehouse";
 
@@ -27,11 +26,6 @@ const publicRoutes = [
       path: 'login',
       page: Login
     },
-    {
-      path: '/register',
-      page: Register
-    },
-    
     {
       path: '/',
       page: Home
